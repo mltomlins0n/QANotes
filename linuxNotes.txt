@@ -10,8 +10,64 @@ ls /etc/[!a-m]* - List any folders (and their files) in the etc/ folder that don
 
 file /usr/bin/*x* - Reports the file type and symbolic links of all files in the directory /usr/bin/ that has an 'x' in the file name.
 
-ls [a-z]*[0-9] - List all files that start with a lowercase letter and end in a number
+ls [a-z]*[0-9] - List all files that start with a lowercase letter and end in a number (Character case)
 
 ls -l .[!.]* - List the contents of all hidden files and folders
 
 ls -d /etc/*.d/* - List the contents of all directories with any name, a '.d' extension, and anything after that
+
+Character Classes
+Locale independent
+[[:lower:]]
+[[:upper:]]
+[[:alpha:]]
+[[:numeric:]]
+[[:alum:]]
+[[:punct:]]
+[[:digit:]]
+
+INodes
+
+An inode number points to an inode. This is a data structure that stores info about a file, such as:
+- Size
+- Device ID
+- User and Group ID
+- Access priveleges
+- File protection flags
+- Timestamps for creation, modification etc.
+- Link counter to determine no. of hard links
+- Pointers to the blocks containing the file's content
+
+To find the inode type 'stat' <filename>
+
+Files can be linked using inodes.
+
+A hard link is a direct pointer to the inode of a file. A linked file points to the original and shares its' contents.
+
+A symbolic link does the same, but the linked file stores the inode number of the origianl file.
+
+You cannot link 2 existing files. To link a file, it must be created when you run the command to link it.
+
+To link files, use the command 'ln' <file1> <file2>. Use the flag -s for a symblic link.
+
+Use 'rm' to remove links. A file is deleted when all of its hard links are removed.
+
+Using the 'history' command displays all commands entered in numerical order. To rerun a command, type '!<number>'. To run a command that you ran x number of commands ago, use '! -n', where n is the number you want.
+
+Typing '!!' runs the last command.
+
+Typing '!some prefix' runs the last command found with the specified prefix. e.g. '!ca' runs the last cat command found.
+
+Running '^xx^yy' runs the last command with xx replaced with yy.
+Running '!n:s/xx/yy' runs the command at the nth line, with xx replaced by yy.
+Running '!*' displays all the arguments of the last command.
+Running '!^' displays the first argument of the last command.
+Running '!$' displays the last argument of the last command.
+Running '!:n' displays the nth argument of the last commnad.
+
+'set' displays all vars
+'env' displays all user vars
+'unset' <var> deletes vars
+
+'type'<program> displays where the program is located.
+

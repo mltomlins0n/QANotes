@@ -1,3 +1,5 @@
+The '*' wildcard symbol looks for 0...* characters.
+
 Commands:
 
 ls*.? - List any files with any char, and exactly 1 char after a dot. Useful for finding directories (e.g. folder.d)
@@ -6,10 +8,10 @@ more [A-Z]* - Echo the contents of any file in the current dir
 
 ls /etc/[!a-m]* - List any folders (and their files) in the etc/ folder that don't include chars in the a-m range.
 
-file /usr/bin/*x* - Reports the file and symbolic links of all files in the directory /usr/bin/ that has an 'x' in the file name.
+file /usr/bin/*x* - Reports the file type and symbolic links of all files in the directory /usr/bin/ that has an 'x' in the file name.
 
 ls [a-z]*[0-9] - List all files that start with a lowercase letter and end in a number
 
-ls -l .[!.]* - List the contents of all hidden directories
+ls -l .[!.]* - List the contents of all hidden files and folders
 
 ls -d /etc/*.d/* - List the contents of all directories with any name, a '.d' extension, and anything after that

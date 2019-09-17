@@ -18,13 +18,12 @@ ls -d /etc/*.d/* - List the contents of all directories with any name, a '.d' ex
 
 Character Classes
 Locale independent
-[[:lower:]]
-[[:upper:]]
-[[:alpha:]]
-[[:numeric:]]
-[[:alum:]]
-[[:punct:]]
-[[:digit:]]
+[[:lower:]] - matches any lower case char
+[[:upper:]] - matches any upper case char
+[[:alpha:]] - matches any lower or upper case char
+[[:alum:]]  - matches any alphanumeric char
+[[:punct:]] - matches any one of  " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~. chars
+[[:digit:]] - matches 0 1 2 3 4 5 6 7 8 9
 
 INodes
 

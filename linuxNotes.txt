@@ -76,5 +76,10 @@ Use 'export -f <function name>' to export a function.
 'set -o <option name>' sets an option to 'on'
 'set +o <option name>' sets an option to 'off'
 
+Permissions
 
+chmod, chown and chgrp change permissions.
+
+'chown newOwner file' gives another user ownership of a file
+'chown newOwner:group file' changes user and group ownership of a file
 

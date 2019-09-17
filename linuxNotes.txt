@@ -71,3 +71,11 @@ Running '!:n' displays the nth argument of the last commnad.
 
 'type'<program> displays where the program is located.
 
+Use 'export -f <function name>' to export a function.
+
+'set -o' displays shell options.
+'set -o <option name>' sets an option to 'on'
+'set +o <option name>' sets an option to 'off'
+
+
+

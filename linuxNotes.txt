@@ -103,3 +103,10 @@ grep -i ignores case
 grep -n gives lnie numbers to each result
 grep -E allows for extended regular expressions (incorporating 'OR' functionality) | = 'OR'
 
+Cut
+
+This command removes sections from each line of files.
+-d is a delimiter, the character that differentiates fields.
+-f specifies the fields to select. e.g -f1,2,3 would return the first 3 fields
+
+

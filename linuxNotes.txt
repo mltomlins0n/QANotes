@@ -108,5 +108,3 @@ Cut
 This command removes sections from each line of files.
 -d is a delimiter, the character that differentiates fields.
 -f specifies the fields to select. e.g -f1,2,3 would return the first 3 fields
-
-

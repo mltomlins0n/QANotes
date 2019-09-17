@@ -101,5 +101,5 @@ grep -v otuputs non-mathced lines
 grep -c outputs the count of matched lines
 grep -i ignores case
 grep -n gives lnie numbers to each result
-grep -E allows for extended regular expressions (incorporating 'OR' functionality)
+grep -E allows for extended regular expressions (incorporating 'OR' functionality) | = 'OR'
 

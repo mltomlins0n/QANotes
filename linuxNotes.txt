@@ -90,3 +90,16 @@ echo "stuff" > file 2 > errorFile - sends both output and errors to files
 
 echo stuff >| file ignores the 'noclobber' option. This allows you to overwrite the contents of a file when 'noclobber' is set to on.
 
+the 'tee' command copies stdin to stdout. It must be surrounded by pipes | tee fileName |
+
+Print out how many users are logged in and keep the list in a file:
+who | tee -a who.list | wc -l
+
+Grep
+
+grep -v otuputs non-mathced lines
+grep -c outputs the count of matched lines
+grep -i ignores case
+grep -n gives lnie numbers to each result
+grep -E allows for extended regular expressions (incorporating 'OR' functionality)
+

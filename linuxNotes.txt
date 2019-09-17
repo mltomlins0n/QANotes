@@ -83,3 +83,10 @@ chmod, chown and chgrp change permissions.
 'chown newOwner file' gives another user ownership of a file
 'chown newOwner:group file' changes user and group ownership of a file
 
+Data Streams
+
+echo "stuff" 1&2 > file - sends either output or errors to file
+echo "stuff" > file 2 > errorFile - sends both output and errors to files
+
+echo stuff >| file ignores the 'noclobber' option. This allows you to overwrite the contents of a file when 'noclobber' is set to on.
+

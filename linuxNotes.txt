@@ -134,10 +134,69 @@ If statement conditionals
   - -eq = equal to
   - -ne = not equal to
 
+The keyword **read** is used to take user input.
 
+## Loops
 
+Double brackets are used for mathmatical operations, e.g. ((count++)) to increment count.  
+'${}' notation is not needed on a variable when performing mathmatical operations on it.  
 
+### Loop syntax
 
+**For Loop**
 
+```bash
+    looper=1
+    
+    for i in 10
+    do
+        echo "Looper is ${looper}"
+        ((looper++))
+    done
+```
+
+**While Loop**
+
+```bash
+    looper=1
+
+    while [ $looper -lt 5 ]
+    do
+        echo "${looper} is less than 5"
+        ((looper++))
+    done
+```
+
+### Switch Statements
+
+```bash
+    echo "Enter your grade (A-F) and hit Enter..."
+read grade
+
+case $grade in
+    "A") echo "Nice one, well done";;
+    "B") echo "Pretty good";;
+    "C") echo "Not bad";;
+    "D") echo "Eeehhhh...you did ok";;
+    "E") echo "'E' is a grade?";;
+    "F") echo "You F'ed it";;
+    *) echo "Not even a grade, try again";;
+esac
+```
+
+### Arrays
+
+```bash
+    declare -a arrayVar=("Alice" "Bob" "Chris" "Dylan")
+
+    counter=1
+
+    for i in "${arrayVar[@]}"
+    do
+        echo "Person ${counter} is ${i}"
+        ((counter++))
+    done
+```
+**You must use the -a flag with the delcare keyword to declare an array**  
 
 

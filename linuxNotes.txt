@@ -102,6 +102,7 @@ grep -c outputs the count of matched lines
 grep -i ignores case
 grep -n gives lnie numbers to each result
 grep -E allows for extended regular expressions (incorporating 'OR' functionality) | = 'OR'
+e.g. cat file | grep "tesxt to find"
 
 Cut
 

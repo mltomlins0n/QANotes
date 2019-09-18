@@ -122,7 +122,21 @@ Displays unique and non unique rows of data, only works if data is sorted so tha
 
 # Scripting
 
-* Scripts must be made executable using the chmod +x command before it can be run.
+**Scripts must be made executable using the chmod +x command before it can be run.**
+**To run a script, use the command ./nameOfScript**
+**If statements need a space after 'if', after '[', and before ']'.**
+
+If statement conditionals
+  - -gt = greater than
+  - -lt = less than
+  - -ge = greater than or equal to
+  - -le = less than or equal to
+  - -eq = equal to
+  - -ne = not equal to
+
+
+
+
 
 
 

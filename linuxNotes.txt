@@ -93,6 +93,7 @@ echo stuff >| file ignores the 'noclobber' option. This allows you to overwrite 
 the 'tee' command copies stdin to stdout. It must be surrounded by pipes | tee fileName |
 
 Print out how many users are logged in, keep the list in a file, and output the line count to the terminal.
+The -a flag appends output when writing to a file
 who | tee -a who.list | wc -l
 
 Grep

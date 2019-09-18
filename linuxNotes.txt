@@ -65,7 +65,7 @@ Running '!$' displays the last argument of the last command.
 Running '!:n' displays the nth argument of the last commnad.
 
 'set' displays all vars
-'env' displays all user vars
+'env' displays all exported vars
 'unset' <var> deletes vars
 
 'type'<program> displays where the program is located.
@@ -86,7 +86,7 @@ chmod, chown and chgrp change permissions.
 Data Streams
 
 echo "stuff" 1&2 > file - sends either output or errors to file
-echo "stuff" > file 2 > errorFile - sends both output and errors to files
+echo "stuff" > file 2> errorFile - sends both output and errors to files
 
 echo stuff >| file ignores the 'noclobber' option. This allows you to overwrite the contents of a file when 'noclobber' is set to on.
 

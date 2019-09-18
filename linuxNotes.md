@@ -32,7 +32,7 @@ Locale independent
   * `[[:alpha:]]` - matches any lower or upper case char
   * `[[:alum:]]`  - matches any alphanumeric char
   * `[[:punct:]]` - matches any one of  " # $ % & ` ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~. chars
-  * [[:digit:]] - matches 0 1 2 3 4 5 6 7 8 9
+  * `[[:digit:]]` - matches 0 1 2 3 4 5 6 7 8 9
 
 ## INodes
 
@@ -181,17 +181,17 @@ e.g. `until [ $looper -ge 5 ] `
 
 ```bash
     echo "Enter your grade (A-F) and hit Enter..."
-read grade
+    read grade
 
-case $grade in
-    "A") echo "Nice one, well done";;
-    "B") echo "Pretty good";;
-    "C") echo "Not bad";;
-    "D") echo "Eeehhhh...you did ok";;
-    "E") echo "`E` is a grade?";;
-    "F") echo "You F`ed it";;
-    *) echo "Not even a grade, try again";;
-esac
+    case $grade in
+        "A") echo "Nice one, well done";;
+        "B") echo "Pretty good";;
+        "C") echo "Not bad";;
+        "D") echo "Eeehhhh...you did ok";;
+        "E") echo "`E` is a grade?";;
+        "F") echo "You F`ed it";;
+        *) echo "Not even a grade, try again";;
+    esac
 ```
 
 ### Arrays

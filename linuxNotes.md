@@ -2,7 +2,7 @@
 
 * The '*' wildcard symbol looks for 0...* characters.
 
-## Commands:
+## Commands
 
 ls*.? - List any files with any char, and exactly 1 char after a dot. Useful for finding directories (e.g. folder.d)
 
@@ -17,6 +17,13 @@ ls [a-z]*[0-9] - List all files that start with a lowercase letter and end in a 
 ls -l .[!.]* - List the contents of all hidden files and folders
 
 ls -d /etc/*.d/* - List the contents of all directories with any name, a '.d' extension, and anything after that
+
+compgen shows what you are allowed to run. The flags are:
+  - -c = all commands
+  - -a = all aliases
+  - -k = all keywords
+  - -b = all builtins
+  - -A = all functions
 
 ## Character Classes
 Locale independent

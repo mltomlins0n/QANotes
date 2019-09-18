@@ -167,6 +167,9 @@ Double brackets are used for mathmatical operations, e.g. ((count++)) to increme
     done
 ```
 
+Key word **until** can be used in place of **while**  
+e.g. until [ $looper -ge 5 ] 
+
 ### Switch Statements
 
 ```bash

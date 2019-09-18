@@ -1,6 +1,8 @@
-The '*' wildcard symbol looks for 0...* characters.
+# Linux Notes
 
-Commands:
+* The '*' wildcard symbol looks for 0...* characters.
+
+## Commands:
 
 ls*.? - List any files with any char, and exactly 1 char after a dot. Useful for finding directories (e.g. folder.d)
 
@@ -16,26 +18,26 @@ ls -l .[!.]* - List the contents of all hidden files and folders
 
 ls -d /etc/*.d/* - List the contents of all directories with any name, a '.d' extension, and anything after that
 
-Character Classes
+## Character Classes
 Locale independent
-[[:lower:]] - matches any lower case char
-[[:upper:]] - matches any upper case char
-[[:alpha:]] - matches any lower or upper case char
-[[:alum:]]  - matches any alphanumeric char
-[[:punct:]] - matches any one of  " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~. chars
-[[:digit:]] - matches 0 1 2 3 4 5 6 7 8 9
+  * [[:lower:]] - matches any lower case char
+  * [[:upper:]] - matches any upper case char
+  * [[:alpha:]] - matches any lower or upper case char
+  * [[:alum:]]  - matches any alphanumeric char
+  * [[:punct:]] - matches any one of  " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~. chars
+  * [[:digit:]] - matches 0 1 2 3 4 5 6 7 8 9
 
-INodes
+## INodes
 
 An inode number points to an inode. This is a data structure that stores info about a file, such as:
-- Size
-- Device ID
-- User and Group ID
-- Access priveleges
-- File protection flags
-- Timestamps for creation, modification etc.
-- Link counter to determine no. of hard links
-- Pointers to the blocks containing the file's content
+  * Size
+  * Device ID
+  * User and Group ID
+  * Access priveleges
+  * File protection flags
+  * Timestamps for creation, modification etc.
+  * Link counter to determine no. of hard links
+  * Pointers to the blocks containing the file's content
 
 To find the inode type 'stat' <filename>
 
@@ -76,14 +78,14 @@ Use 'export -f <function name>' to export a function.
 'set -o <option name>' sets an option to 'on'
 'set +o <option name>' sets an option to 'off'
 
-Permissions
+## Permissions
 
 chmod, chown and chgrp change permissions.
 
 'chown newOwner file' gives another user ownership of a file
 'chown newOwner:group file' changes user and group ownership of a file
 
-Data Streams
+## Data Streams
 
 echo "stuff" 1&2 > file - sends either output or errors to file
 echo "stuff" > file 2> errorFile - sends both output and errors to files
@@ -96,7 +98,7 @@ Print out how many users are logged in, keep the list in a file, and output the 
 The -a flag appends output when writing to a file
 who | tee -a who.list | wc -l
 
-Grep
+## Grep
 
 grep -v otuputs non-mathced lines
 grep -c outputs the count of matched lines
@@ -105,13 +107,23 @@ grep -n gives lnie numbers to each result
 grep -E allows for extended regular expressions (incorporating 'OR' functionality) | = 'OR'
 e.g. cat file | grep "tesxt to find"
 
-Cut
+## Cut
 
 This command removes sections from each line of files.
 -d is a delimiter, the character that differentiates fields.
 -f specifies the fields to select. e.g -f1,2,3 would return the first 3 fields
 e.g cat file | cut -d "," -f1-3
 
-Uniq
+## Uniq
 
 Displays unique and non unique rows of data, only works if data is sorted so that unique data is grouped.
+
+----------------------------------------------------------------------------------------------------
+
+# Scripting
+
+* Scripts must be made executable using the chmod +x command before it can be run.
+
+
+
+

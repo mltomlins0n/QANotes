@@ -9,6 +9,7 @@
 * [Rules](#rules)
   * [Rulesets](#rulesets)
   * [Ruleset Stack](#rulesetStack)
+* [Classes](#classes)
 
 
 <a name="case"></a>
@@ -126,4 +127,33 @@ Each application consists of a sequence of rulesets, called a **ruleset stack**.
 Each entry in the ruleset stack represents all the versions of the specified ruleset, starting with the listed version and working down to the lowest minor and patch version for the specified major version.
 
 Each version of an application contains a unique ruleset stack. This allows an updated application to reference new ruleset versions that contain updates and new features.
+
+<a name="classes"></a>
+## Classes
+
+In a Pega application, rules are grouped by their capacity for reuse. Each group is a **class**. 
+
+Each application consists of 3 types of class.
+
+- **Work class**, contains the rules that describe how to process a case or cases, such as processes, data elements, and user interfaces.
+
+- **Integration class**, contains the rules that describe how the application interacts with other systems, such as a customer database or a third-party web server.
+
+- **Data class**, contains the rules that describe the data objects used in the application, such as a customer or collection of order items.
+
+Classes which contain other classes are **parent** classes. The contained class is the **child** class. A child class can inherit rules from its parent class, to reuse them.
+
+Pega's "Work" class contains child classes for different case types, such as an auto insurance claim. Each child class contains all of the rules unique to that case type.
+
+The class heirarchy determines how system architects can reuse rules in the application, and consists of several groups of classes:
+
+- Classes that describe a specific case type.
+
+- Classes that collect common rules and data elements, such as an pproval process shared across the whole IT department.
+
+- Classes from other applications.
+
+- Base classes provided by Pega. These classes contains rules that provide basic functionality for processing cases.
+
+Any rule available to an application through the class hierarchy is considered in scope. Rules that an application cannot access through the class hierarchy are considered out of scope.
 

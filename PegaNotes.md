@@ -1,5 +1,17 @@
 # Pega Notes
 
+## Contents
+
+- [Case Life Cycle](#CaseLifeCycle)
+- [Service Level Agreements](#SLA)
+- [Parallel Processing](#ParallelProcessing)
+- [Routing Work](#RoutingWork)
+- [Rules](#Rules)
+  * [Rulesets](#Rulesets)
+  * [Ruleset Stack](#RulesetStack)
+
+
+
 ## Case Life Cycle
 
 - A **Case Type** is an abstract model of a business transaction.
@@ -53,7 +65,7 @@ A **work queue** is a list of all open assignments for a **group of users**. Ass
 
 A **work list** is a list of all open assignments for a **specific user**.
 
-There are 3 routing options:
+Routing options include:
 
 - Current user
 - Specific user
@@ -64,4 +76,48 @@ You route an assignment to the **current user** if they should perform the task,
 You route an assignment to the work list of a **specific user** if only that user needs to complete an assignment, e.g. if the manager is the only one to apporve expense reports.
 
 You route to a **work queue** for a specific group when anyone in the group can complete the assignment. E.g. anyone in payroll could send payments to employees.
+
+For more complex routing you can use **business logic** to route assignments. This is based on a **when** condition to route work based on certain conditions. A when rule can have multiple conditions.
+
+## Rules
+
+Rules describe the behaviour of individual cases.
+
+Each rule is an instance of a **rule type**. A rule type is an abstract model of a specific case behavior. Pega provides many rule types. For example, Pega provides one type of rule to describe a process flow, and another type of rule to describe an automated email notification.
+
+Using individual rules makes your application modular, with rules acting much like classes in an OOP application.
+
+This approach provides three significant benefits:
+
+- Versioning, rules can be updated whenever case behaviour needs to change. Pega maintains a history of these changes much like GitHub.
+
+- Delegation, System architects delegate rules to business users to allow business users to update case behavior as business conditions change. The business user updates the delegated rule, while other parts of the application remain unchanged.
+
+- Reuse, rules should be reused whenever an application needs to incorporate existing case behaviour.  For example, you create a UI form to collect policyholder information for auto insurance claims. You can then reuse this UI form for property insurance claims and marine insurance claims.
+
+### Rulesets
+
+To package rules for distribution as part of an application, you collect rules into a group called a ruleset. Rulesets can also be reused in different applications.
+
+An instance of a ruleset is a **ruleset version**. Updating the contents of a ruleset creates a new version of that ruleset. 
+
+You identify each ruleset by its name and version number. For example, an application to process expense reports includes a ruleset named Expense. You refer to the ruleset as Expense:01-02-03, where Expense is the name of the ruleset and 01-02-03 is the version number.
+
+Ruleset numbers start at 01-01-01 and can increease to 99-99-99.
+
+The version number is divided into three segments: a **major version**, a **minor version**, and a **patch version**.
+
+- The major version represents a substantial release of an application. A major version change encompasses extensive changes to application functionality. For example, the Accounting department uses an application to manage expense reports. If Accounting wants to extend the application to track employee time off for payroll accounting, you create a new major version of the ruleset.
+
+- The minor version represents an interim release or enhancements to a major release. For example, you need to update an expense reporting application to make automatic audit travel reimbursements. You create a new minor version of the ruleset.
+
+- The patch version consists of fixes to address bugs in an application. For example, you notice that a field in the current version of an application has an incorrect label. You create a new minor version to correct the field label.
+
+### Ruleset Stack
+
+Each application consists of a sequence of rulesets, called a **ruleset stack**. This determines the order in which Pega looks through rulesets to find the rule begin used. 
+
+Each entry in the ruleset stack represents all the versions of the specified ruleset, starting with the listed version and working down to the lowest minor and patch version for the specified major version.
+
+Each version of an application contains a unique ruleset stack. This allows an updated application to reference new ruleset versions that contain updates and new features.
 

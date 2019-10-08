@@ -2,16 +2,16 @@
 
 ## Contents
 
-- [Case Life Cycle](#CaseLifeCycle)
-- [Service Level Agreements](#SLA)
-- [Parallel Processing](#ParallelProcessing)
-- [Routing Work](#RoutingWork)
-- [Rules](#Rules)
-  * [Rulesets](#Rulesets)
-  * [Ruleset Stack](#RulesetStack)
+* [Case Life Cycle](#case)
+* [Service Level Agreements](#sla)
+* [Parallel Processing](#parallel)
+* [Routing Work](#routing)
+* [Rules](#rules)
+  * [Rulesets](#rulesets)
+  * [Ruleset Stack](#rulesetStack)
 
 
-
+<a name="case"></a>
 ## Case Life Cycle
 
 - A **Case Type** is an abstract model of a business transaction.
@@ -25,6 +25,7 @@ It is best practice to break steps into other processes if you have more than 7 
 
 Alternate stages can be used when a case deviates from the sunny day path. E.g a request is cancelled.
 
+<a name="sla"></a>
 ## Service level Agreements
 
 **A service level agreement (SLA) establishes a deadline for work completion. This can range from an informal promise to negotiated contracts**.
@@ -44,6 +45,7 @@ Cases sometimes have an intial urgency. This is set before the case has even sta
 
 The "Goal" interval defines the amount of time in which the case or step should be completed.
 
+<a name="parallel"></a>
 ## Parallel Processing
 
 If processes can be performed in any order, they can be configured as parallel.
@@ -52,6 +54,7 @@ If processes can be performed in any order, they can be configured as parallel.
 
 This allows cases to advance through multiple paths at the same time within a stage.
 
+<a name="routing"></a>
 ## Routing Work
 
 When modelling a process, you define who should do the work on each task, or assignment.
@@ -79,6 +82,7 @@ You route to a **work queue** for a specific group when anyone in the group can 
 
 For more complex routing you can use **business logic** to route assignments. This is based on a **when** condition to route work based on certain conditions. A when rule can have multiple conditions.
 
+<a name="rules"></a>
 ## Rules
 
 Rules describe the behaviour of individual cases.
@@ -95,6 +99,7 @@ This approach provides three significant benefits:
 
 - Reuse, rules should be reused whenever an application needs to incorporate existing case behaviour.  For example, you create a UI form to collect policyholder information for auto insurance claims. You can then reuse this UI form for property insurance claims and marine insurance claims.
 
+<a name="rulesets"></a>
 ### Rulesets
 
 To package rules for distribution as part of an application, you collect rules into a group called a ruleset. Rulesets can also be reused in different applications.
@@ -113,6 +118,7 @@ The version number is divided into three segments: a **major version**, a **mino
 
 - The patch version consists of fixes to address bugs in an application. For example, you notice that a field in the current version of an application has an incorrect label. You create a new minor version to correct the field label.
 
+<a name="rulesetStack"></a>
 ### Ruleset Stack
 
 Each application consists of a sequence of rulesets, called a **ruleset stack**. This determines the order in which Pega looks through rulesets to find the rule begin used. 

@@ -32,5 +32,13 @@ Cases sometimes have an intial urgency. This is set before the case has even sta
 
 The "Goal" interval defines the amount of time in which the case or step should be completed.
 
-## Parallel Processes
+## Parallel Processing
+
+If processes can be performed in any order, they can be configured as parallel.
+
+2 or more processes can be parallel.
+
+This allows cases to advance through multiple paths at the same time within a stage.
+
+## Decision Points
 

@@ -10,6 +10,9 @@
   * [Rulesets](#rulesets)
   * [Ruleset Stack](#rulesetStack)
 * [Classes](#classes)
+* [Inheritance](#inheritance)
+  * [Pattern Inheritance](#pattern)
+  * [Directed Inheritance](#directed)
 
 
 <a name="case"></a>
@@ -157,3 +160,29 @@ The class heirarchy determines how system architects can reuse rules in the appl
 
 Any rule available to an application through the class hierarchy is considered in scope. Rules that an application cannot access through the class hierarchy are considered out of scope.
 
+<a name="inheritance"></a>
+## Inheritance
+
+Inheritance allows your application to reuse existing rules for other cases or applications.
+
+There are 2 methods of inheriting rules in Pega, **Pattern Inheritance** and **Directed Inheritance**.
+
+<a name="pattern"></a>
+### Pattern Inheritance
+
+Pattern inheritance is automatic. It uses the class name structure to determine rules available to reuse. Pega Platform uses a multi-level class hierarchy of Organization (Org), Division (Div), Unit and Class group to organize application assets.
+
+The **organization** layer contains all the classes for applications across an entire business or other organization. The organization layer often contains data and integration classes that can be applied across the entire organization.
+
+The **division** layer contains the work, data, and integration classes for the division.
+
+The optional **unit** layer contains the work, data, and integration classes for the unit.
+
+The **class** group contains all the case types in an application.
+
+<a name="directed"></a>
+### Directed Inheritance
+
+In directed inheritance, the parent class is explicitly specified. You apply directed inheritance to reuse standard Pega Platform rules and rules from other applications outside the business class hierarchy.
+
+**Directed inheritance is the only option that allows an application class to inherit rules defined for standard Pega classes, such as the Work- or Data- class**.

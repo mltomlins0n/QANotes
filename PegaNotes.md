@@ -40,5 +40,28 @@ If processes can be performed in any order, they can be configured as parallel.
 
 This allows cases to advance through multiple paths at the same time within a stage.
 
-## Decision Points
+## Routing Work
+
+When modelling a process, you define who should do the work on each task, or assignment.
+
+There are 2 routing types:
+
+- Work queue
+- Work List
+
+A **work queue** is a list of all open assignments for a **group of users**. Assignments stay in the work queue until a user associated with the work queue selects an assignment, or a manager sends an assignment to a specific user.
+
+A **work list** is a list of all open assignments for a **specific user**.
+
+There are 3 routing options:
+
+- Current user
+- Specific user
+- Work queue
+
+You route an assignment to the **current user** if they should perform the task, e.g. the employee creating the request enters the expense details.
+
+You route an assignment to the work list of a **specific user** if only that user needs to complete an assignment, e.g. if the manager is the only one to apporve expense reports.
+
+You route to a **work queue** for a specific group when anyone in the group can complete the assignment. E.g. anyone in payroll could send payments to employees.
 

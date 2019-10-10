@@ -224,3 +224,19 @@ Pega comes with a set of standard property rules. The standard properties have n
 
 - **pz** - Supports internal system processing, these values may change with new product releases. You can read but not write to these properties.
 
+<a name="validation"></a>
+## Validation Rules
+
+You use validation rules when you cannot predict or control the value a user enters in a form. There are two types of validation rules: **validate** and **edit validate**.
+
+You use validate rules to compare a property against a **condition** when the user submits a form. If the user enters a value that fails to meet the condition, the form displays an error when the form is submitted. 
+
+For example, assume your view contains a field for date of birth. The property type and control cannot prevent users from entering a date that is in the future. However, you can design a validate rule to display an error if the user submits a date that is in the future.
+
+You use edit validate rules with single value, value list, and value group properties to test for **patterns**. 
+
+For example, you can configure a zip code property to reference an edit validate rule that tests whether the entered value has five digits. 
+
+In another example, an email address can reference an edit rule to test whether the entered value contains an "at" (@) symbol. If the submitted value is invalid, the field displays an error. 
+
+Edit validate rules run when the user exits a field if the harness rule is configured to support client-side validation. Otherwise, edit validate rules are run when the user submits a form.

@@ -14,7 +14,7 @@
   * [Pattern Inheritance](#pattern)
   * [Directed Inheritance](#directed)
 * [Data Elements](#data)
-* [Pega property Rules](#propertyRules)
+* [Pega Property Rules](#propertyRules)
 
 
 <a name="case"></a>

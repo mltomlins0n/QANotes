@@ -194,7 +194,7 @@ In directed inheritance, the parent class is explicitly specified. You apply dir
 
 When attempting to reuse rules through inheritance, Pega first searches through the parent classes indicated by pattern inheritance. If unsuccessful, Pega then searches the parent class indicated by directed inheritance as the basis for another pattern inheritance search. This process repeats until Pega reaches the last class in the class hierarchy, called the ultimate base class or @baseclass. If the rule cannot be found after searching @baseclass, Pega returns an error.
 
-<a name="data">
+<a name="data"></a>
 ## Data Elements
 
 Data elements are called **properties** or **fields**. These are the same thing. What can differ is the **mode** of the property. The 2 types are **value** mode and **page** mode.

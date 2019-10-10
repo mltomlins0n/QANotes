@@ -192,3 +192,22 @@ In directed inheritance, the parent class is explicitly specified. You apply dir
 
 When attempting to reuse rules through inheritance, Pega first searches through the parent classes indicated by pattern inheritance. If unsuccessful, Pega then searches the parent class indicated by directed inheritance as the basis for another pattern inheritance search. This process repeats until Pega reaches the last class in the class hierarchy, called the ultimate base class or @baseclass. If the rule cannot be found after searching @baseclass, Pega returns an error.
 
+<a name="data">
+## Data Elements
+
+Data elements are called **properties** or **fields**. These are the same thing. What can differ is the **mode** of the property. The 2 types are **value** mode and **page** mode.
+
+- **Value** mode describe a single piece of information, such as a total.
+
+- **Page** mode describes a data object such as a customer.
+
+Value mode should be used for properties with no correlation to other properties. The 3 types of value mode properties are:
+
+- **Single value** - stores a single piece of data.
+
+- **Value list** - acts as an ordered list of single values.
+
+- **Value gruop** - acts as an unordered list of single values.
+
+**These 3 types are the same for page mode properties**.
+

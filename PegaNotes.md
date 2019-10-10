@@ -186,3 +186,9 @@ The **class** group contains all the case types in an application.
 In directed inheritance, the parent class is explicitly specified. You apply directed inheritance to reuse standard Pega Platform rules and rules from other applications outside the business class hierarchy.
 
 **Directed inheritance is the only option that allows an application class to inherit rules defined for standard Pega classes, such as the Work- or Data- class**.
+
+<a name="reusing"></a>
+### Resusing Rules Through Inheritance
+
+When attempting to reuse rules through inheritance, Pega first searches through the parent classes indicated by pattern inheritance. If unsuccessful, Pega then searches the parent class indicated by directed inheritance as the basis for another pattern inheritance search. This process repeats until Pega reaches the last class in the class hierarchy, called the ultimate base class or @baseclass. If the rule cannot be found after searching @baseclass, Pega returns an error.
+

@@ -13,6 +13,8 @@
 * [Inheritance](#inheritance)
   * [Pattern Inheritance](#pattern)
   * [Directed Inheritance](#directed)
+* [Data Elements](#data)
+* [Pega property Rules](#propertyRules)
 
 
 <a name="case"></a>
@@ -210,4 +212,15 @@ Value mode should be used for properties with no correlation to other properties
 - **Value gruop** - acts as an unordered list of single values.
 
 **These 3 types are the same for page mode properties**.
+
+<a name="propertyRules"></a>
+## Pega Property Rules
+
+Pega comes with a set of standard property rules. The standard properties have names that start with px, py, or pz. You cannot create new properties starting with px, py, or pz.
+
+- **px** - identifies special properties, your application can read but not write to these properties.
+
+- **py** - you can use these in your application
+
+- **pz** - Supports internal system processing, these values may change with new product releases. You can read but not write to these properties.
 

@@ -14,6 +14,7 @@
   * [Pattern Inheritance](#pattern)
   * [Directed Inheritance](#directed)
 * [Data Elements](#data)
+  * [Data Types](#dataTypes)
 * [Pega Property Rules](#propertyRules)
 
 
@@ -213,6 +214,27 @@ Value mode should be used for properties with no correlation to other properties
 
 **These 3 types are the same for page mode properties**.
 
+<a name="dataTypes"></a>
+### Data Types
+
+Data can be sourced from different places:
+
+- **Locally** - A Pega system of record can locally source data types.
+
+- **Externally** - External systems can source data types.
+
+- **None** - Data types can obtain data entered or transformed during runtime and not asscociate these with any system of record.
+
+Data types can reference other data types. For example, a *Customer* data type could have an *address* property that is a field group defined in an *Address* data type.
+
+The general rules for data type usage are:
+
+- Use standard Pega data types when possible.
+
+- Extend an existing data type if it only partly meets your needs.
+
+- If no suitable data type exists, create a new one.
+
 <a name="propertyRules"></a>
 ## Pega Property Rules
 
@@ -237,6 +259,7 @@ You use edit validate rules with single value, value list, and value group prope
 
 For example, you can configure a zip code property to reference an edit validate rule that tests whether the entered value has five digits. 
 
-In another example, an email address can reference an edit rule to test whether the entered value contains an "at" (@) symbol. If the submitted value is invalid, the field displays an error. 
+In another example, an email address can reference an edit rule to test whether the entered value contains an "@" symbol. If the submitted value is invalid, the field displays an error. 
 
 Edit validate rules run when the user exits a field if the harness rule is configured to support client-side validation. Otherwise, edit validate rules are run when the user submits a form.
+

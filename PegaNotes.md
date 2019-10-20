@@ -17,6 +17,8 @@
   * [Data Types](#dataTypes)
   * [Data Pages](#dataPages)
 * [Pega Property Rules](#propertyRules)
+* [Validation Rules](#validation)
+* [Declare Expressions](#declare)
 
 
 <a name="case"></a>
@@ -245,9 +247,9 @@ The **Object Type** of a data page specifies the information the data page will 
 
 There are 3 scopes for data pages:
 
-- **Requestor** - Requestor level scope lets you share data pages for a given user session and is often used when the data page contains data associated with the logged in operator.
-
 - **Thread** - Thread level scope is used when the data page is related to a particular case.
+
+- **Requestor** - Requestor level scope lets you share data pages for a given user session and is often used when the data page contains data associated with the logged in operator.
 
 - **Node** - Node level scope is used to make a data page instance accessible by all users of the application, and other applications running on a given node.
 
@@ -279,3 +281,13 @@ In another example, an email address can reference an edit rule to test whether 
 
 Edit validate rules run when the user exits a field if the harness rule is configured to support client-side validation. Otherwise, edit validate rules are run when the user submits a form.
 
+<a name="declare"></a>
+## Declare Expressions
+
+Declare expressions compute a value based on an expression and are automatically triggered based on backward or forward chaining. They consist of a **target** property, **source** properties and an **expression**.
+
+- Declarative network - internal data structure that defines the relationship between properties whose value is automatically calculated based on changes to other property values. A declare expression in a network can use the target property of another declare expression as its source property.
+
+- Declarative processing rules - allow configuration of app so that it **automatically updates property values** such as total order amount. e.g. when laptops are ordered by a user, the system multiplies the price of one laptop by the quantity to calculate total order amount. The updates only occur when triggered in the application defined using the trigger event. It monitors changes to the value and runs a computation to apply changes when it does. Used when rules need to be executed all the time, when the input data is changed or the result of the rule is used.
+
+- Procedural processing rules - depends upon rules, such as data transforms, activities to instruct the application when to look for a trigger event. **Only changes data when the user submits a form**. To make the changes visible to the users as they enter values, you must configure sections to use the data transform to refresh the fields. Use at well defined intervals or have a control to fire off the expression

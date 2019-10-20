@@ -15,6 +15,7 @@
   * [Directed Inheritance](#directed)
 * [Data Elements](#data)
   * [Data Types](#dataTypes)
+  * [Data Pages](#dataPages)
 * [Pega Property Rules](#propertyRules)
 
 
@@ -234,6 +235,21 @@ The general rules for data type usage are:
 - Extend an existing data type if it only partly meets your needs.
 
 - If no suitable data type exists, create a new one.
+
+<a name="dataPages"></a>
+### Data Pages
+
+Data pages store data for an application regardless of source. Data pages cache data on demand to a clipboard page and define who can access the page.
+
+The **Object Type** of a data page specifies the information the data page will capture. It acts like the **class** of the data page.
+
+There are 3 scopes for data pages:
+
+- **Requestor** - Requestor level scope lets you share data pages for a given user session and is often used when the data page contains data associated with the logged in operator.
+
+- **Thread** - Thread level scope is used when the data page is related to a particular case.
+
+- **Node** - Node level scope is used to make a data page instance accessible by all users of the application, and other applications running on a given node.
 
 <a name="propertyRules"></a>
 ## Pega Property Rules

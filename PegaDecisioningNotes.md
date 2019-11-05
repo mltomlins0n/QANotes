@@ -71,5 +71,3 @@ Propositions are organized into a 3 level hierarchy to meet various business nee
 This Hierarchy is: **Business Issue > Group > Proposition.**
 
 It can be customized into any hierarchal structure that meets the business needs.
-
-

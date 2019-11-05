@@ -4,6 +4,7 @@
 
 * [Objectives](#obj)
 * [Next-Best-Action (NBA)](#NBA)
+* [Propositions](#prop)
 
 <a name="obj"></a>
 ## Objectives
@@ -49,5 +50,26 @@ Two conditions must be met for the Customer Decision Hub to consider an offer fo
 * The **Active** attribute is set on the offer.
 * The offer belongs to the **first relevant action** in the NBA hierarchy.
 
+<a name="prop"></a>
+## Propositions
+
+**Propositions are any customer facing offers, actions or messages.**
+
+They can be presented on any customer interaction channel, web, mobile, contact center, social media etc.
+
+Serviceing a customer's request is a valid proposition, even though it was the customer who initiated the request.
+
+Every proposition has properties that define its characteristics:
+
+* Price
+* Benefit
+* Product Image
+* Short Title
+
+Propositions are organized into a 3 level hierarchy to meet various business needs, such as **Sales**, **Retention**, and **Service**.
+
+This Hierarchy is: **Business Issue > Group > Proposition.**
+
+It can be customized into any hierarchal structure that meets the business needs.
 
 

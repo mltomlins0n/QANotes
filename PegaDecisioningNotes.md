@@ -5,6 +5,7 @@
 * [Objectives](#obj)
 * [Next-Best-Action (NBA)](#NBA)
 * [Propositions](#prop)
+* [NBA Designer](#NBADesign)
 
 <a name="obj"></a>
 ## Objectives
@@ -71,3 +72,17 @@ Propositions are organized into a 3 level hierarchy to meet various business nee
 This Hierarchy is: **Business Issue > Group > Proposition.**
 
 It can be customized into any hierarchal structure that meets the business needs.
+
+<a name="NBADesign"></a>
+## NBA Designer
+
+The Next-Best-Action Designer is a design wizard that automates the NBA strategy design process.
+
+Designs can be either **Top-Down** or **Bottom-Up**.
+
+In a Top-Down design, you start at the NBA node and work your way down the hierarchy to the issue-level node, and down again to the group level node. e.g. **NBA > Sales > CreditCards.**
+
+The bottom-up approach reverses this, you start at the group level and deisgn upwards, through the issue-level node and up to the top level NBA node. e.g. **CreditCards > Sales > NBA.**
+
+The idea behind these 2 approaches is that either is fine, it's about allowing different teams to work in parallel, and independently in the design phase.
+

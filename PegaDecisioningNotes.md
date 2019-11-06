@@ -10,6 +10,10 @@
   * [Prioritization](#priority)
   * [Target Audience](#audience)
   * [Eligibility Criteria](#eligible)
+* [Data Analytics](#data)
+  * [Predictive](#predict)
+  * [Adaptive](#adapt)
+  * [Predictive vs Adaptive](#predictVSadapt)
 
 <a name="obj"></a>
 ## Objectives
@@ -22,7 +26,7 @@
 
 * Explain how predictive and adaptive modeling works and use them in decision strategies.
 
-* Prioritize propositions based on predicted customer behavior.
+* Prioritize propositions based on predicted customer behaviour.
 
 * Run alternative strategies and compare the results using Visual Business Director.
 
@@ -125,3 +129,56 @@ Eligibility rules in Pega are **When** rules. To implement an eligibility rule y
 
 Both **cusomter** and **proposition** properties can be used in eligibility rules. To access a proposition property, just omit the ".Primary" from the property you are accessing. e.g. **.Age** is a proposition property, and **.Primary.Age** is a customer property.
 
+<a name="data"></a>
+## Data Analytics
+
+There a different types of data analytics:
+
+* **Descriptive** aka business intelligence. This looks back at existing data and visualises it.
+
+* **Predictive**. This uses past data to find patterns and uses those patterns to predit what will likely happen in future.
+
+Within predictive analytics there are 2 approaches. One creates **Predictive models** and the other creates **Adaptive models**.
+
+Predictive models are created offline using historical data by people working with a predictive modeling tool. Pega provides the Prediction Studio portal to do this type of modeling.
+
+In the other approach to predictive analytics, models are created in real-time without human intervention.
+
+Adaptive analytics automates everything that can be automated in the predictive model development and execution process. No human intervention is required in the generation of adaptive models. As the user, all you have to do is create the model definition. The software then creates a **container** in which customer and behaviour data is captured in real-time. The software can then analyse the data and create new predictive models based on it.
+
+<a name="predict"></a>
+### Predictive Analytics
+
+It starts with a data set, which is called a customer analytical record. This is a single record with lots of information about a customer. Each customer is labeled with a Case number, and all the data on that customer is associated with that Case number. The data includes profile information: name, address, age, gender, etc., as well as data about the customer’s past behaviour. 
+
+The behavioural data shows the customer’s responses (accepts/rejects) to past propositions. All of this data is used to create a predictive model. But before the model can be created, we need similar data from other customers. 
+
+The idea is that two customers with similar attributes, under the same set of circumstances, will make similar choices and therefore behave in the same way.
+
+The most crucial and difficult part of Predictive Analytics is collecting enough data to find the attributes that will be good predictors of customer behaviour.
+
+<a name="adapt"></a>
+### Adaptive Analytics
+
+In the case of adaptive analytics, there are typically multiple modeling processes going on at the same time.  For each proposition there is a predictive model. This allows us to calculate a customer’s propensity for each proposition.
+
+Once the proposition is offered, and the customer’s response is captured, the new evidence is given to Adaptive Decision Manager, which uses it to refine the existing models. When new models are ready, Adaptive Decision Manager deploys them automatically into the Pega Decision Management decision engine.
+
+<a name="predictVSadapt"></a>
+### Predictive vs Adaptive
+
+Predictive analytics requires historical data that contains the behavior you want to predict.
+
+Adaptive analytics, on the other hand, can start with no data and learn from the data gathered during customer interactions. Because adaptive analytics learn on-the-fly, model creation happens automatically.
+
+With predictive analytics, you have more control over the model because its development is a manual process that you are directly involved in and can influence.
+
+Predictive modeling uses a range of powerful techniques, and you can select the best model for your needs. Adaptive modeling is a fully automated process, and as a result, you have very little control over the techniques used to predict behavior.
+
+Adaptive models learn constantly and therefore their performance changes over time, which makes the outcome less predictable than that of predictive models.
+
+Predictive models should be used when predictability and compliance is important. For example, risk-related behavior such as credit risk, claims risk, and fraud are perfect calculations for predictive models.
+
+Also, some behavior types don’t happen quickly. For instance, with loan defaults or churn, it can take months or even years to accumulate significant amounts of data. Predictive modeling should be used in these situations.
+
+Last but not least, it is possible to implement hundreds of adaptive models in a solution because of the high degree of automation. As a result, predictive models are useful for determining more subtle and often high value behavior types.

@@ -14,6 +14,7 @@
   * [Predictive](#predict)
   * [Adaptive](#adapt)
   * [Predictive vs Adaptive](#predictVSadapt)
+* [Interaction History](#history)
 
 <a name="obj"></a>
 ## Objectives
@@ -182,4 +183,11 @@ Predictive models should be used when predictability and compliance is important
 Some behavior types don’t happen quickly. For instance, with loan defaults or churn, it can take months or even years to accumulate significant amounts of data. Predictive modeling should be used in these situations.
 
 It is possible to implement hundreds of adaptive models in a solution because of the high degree of automation. As a result, predictive models are useful for determining more subtle and often high value behavior types.
+
+<a name="history"></a>
+## Interaction History
+
+Interaction History gives Pega Decision Managements its long term memory. It captures every customer response to every NBA, even if the response is no response.
+
+Interaction History can be added to a strategy using the **Interaction History** component.
 

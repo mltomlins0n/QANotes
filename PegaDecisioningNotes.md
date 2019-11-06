@@ -5,6 +5,7 @@
 * [Objectives](#obj)
 * [Next-Best-Action (NBA)](#NBA)
 * [Propositions](#prop)
+  * [Dynamic Pricing](#pricing)
 * [NBA Designer](#NBADesign)
 
 <a name="obj"></a>
@@ -72,6 +73,11 @@ Propositions are organized into a 3 level hierarchy to meet various business nee
 This Hierarchy is: **Business Issue > Group > Proposition.**
 
 It can be customized into any hierarchal structure that meets the business needs.
+
+<a name="pricing"></a>
+### Dynamic Pricing
+
+The **price** property can be set dynamically based on customer properties, such as customer value. Using the **Set Property** decision component achieves this. The properties can be set to a **constant** value or a **calculated** value. Set property decision components have access to **proposition** and **customer** properties.
 
 <a name="NBADesign"></a>
 ## NBA Designer

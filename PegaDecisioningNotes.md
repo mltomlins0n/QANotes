@@ -169,7 +169,7 @@ Once the proposition is offered, and the customer’s response is captured, the 
 
 Predictive analytics requires historical data that contains the behavior you want to predict.
 
-Adaptive analytics, on the other hand, can start with no data and learn from the data gathered during customer interactions. Because adaptive analytics learn on-the-fly, model creation happens automatically.
+Adaptive analytics can start with no data and learn from the data gathered during customer interactions. Because adaptive analytics learn on-the-fly, model creation happens automatically.
 
 With predictive analytics, you have more control over the model because its development is a manual process that you are directly involved in and can influence.
 
@@ -179,6 +179,7 @@ Adaptive models learn constantly and therefore their performance changes over ti
 
 Predictive models should be used when predictability and compliance is important. For example, risk-related behavior such as credit risk, claims risk, and fraud are perfect calculations for predictive models.
 
-Also, some behavior types don’t happen quickly. For instance, with loan defaults or churn, it can take months or even years to accumulate significant amounts of data. Predictive modeling should be used in these situations.
+Some behavior types don’t happen quickly. For instance, with loan defaults or churn, it can take months or even years to accumulate significant amounts of data. Predictive modeling should be used in these situations.
 
-Last but not least, it is possible to implement hundreds of adaptive models in a solution because of the high degree of automation. As a result, predictive models are useful for determining more subtle and often high value behavior types.
+It is possible to implement hundreds of adaptive models in a solution because of the high degree of automation. As a result, predictive models are useful for determining more subtle and often high value behavior types.
+

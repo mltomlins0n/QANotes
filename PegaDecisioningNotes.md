@@ -8,6 +8,7 @@
 * [Propositions](#prop)
   * [Dynamic Pricing](#pricing)
   * [Prioritization](#priority)
+  * [Target Audience](#audience)
 
 <a name="obj"></a>
 ## Objectives
@@ -100,3 +101,15 @@ Propositions can be ranked using a **prioritize** decision component. This compo
 
 * Ranks propositions based on an expression.
 * Selects the highest ranked proposition from the list.
+
+<a name="audience"></a>
+### Target Audience
+
+The target audience of a proposition is selected using a **filter** to make decisions based on an expression, a condition, or the value of a property.
+
+For example, you may have 20 credit card propositions. Applying a filter that checks that the value of the **.AnnualFee** property = 0 will filter out those propositions that do not meet this requirement. 
+
+Adding another filter that tests that the value of **.Primary.CustomerType** == "Student" would filter out those customers who are not students. **".Primary"** gives you access to all customer properties.
+
+The resulting propositions are credit cards with no annual fee, that are available to students only.
+

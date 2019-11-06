@@ -6,6 +6,7 @@
 * [Next-Best-Action (NBA)](#NBA)
 * [Propositions](#prop)
   * [Dynamic Pricing](#pricing)
+  * [Prioritization](#priority)
 * [NBA Designer](#NBADesign)
 
 <a name="obj"></a>
@@ -78,6 +79,14 @@ It can be customized into any hierarchal structure that meets the business needs
 ### Dynamic Pricing
 
 The **price** property can be set dynamically based on customer properties, such as customer value. Using the **Set Property** decision component achieves this. The properties can be set to a **constant** value or a **calculated** value. Set property decision components have access to **proposition** and **customer** properties.
+
+<a name="priority"></a>
+### Prioritization
+
+Propositions can be ranked using a **prioritize** decision component. This component:
+
+* Ranks propositions based on an expression.
+* Selects the highest ranked proposition from the list.
 
 <a name="NBADesign"></a>
 ## NBA Designer

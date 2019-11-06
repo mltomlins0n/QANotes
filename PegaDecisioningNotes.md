@@ -9,6 +9,7 @@
   * [Dynamic Pricing](#pricing)
   * [Prioritization](#priority)
   * [Target Audience](#audience)
+  * [Eligibility Criteria](#eligible)
 
 <a name="obj"></a>
 ## Objectives
@@ -112,4 +113,15 @@ For example, you may have 20 credit card propositions. Applying a filter that ch
 Adding another filter that tests that the value of **.Primary.CustomerType** == "Student" would filter out those customers who are not students. **".Primary"** gives you access to all customer properties.
 
 The resulting propositions are credit cards with no annual fee, that are available to students only.
+
+<a name="eligible"></a>
+### Eligibility Criteria
+
+Eligibility rules filter propositions based on **criteria**. e.g. customers must be over 18 to qualify for a certain type of credit card.
+
+Eligibility rules can be applied to individual propositions or a group of propositions.
+
+Eligibility rules in Pega are **When** rules. To implement an eligibility rule you must first create a **Proposition Filter** rule.
+
+Both **cusomter** and **proposition** properties can be used in eligibility rules. To access a proposition property, just omit the ".Primary" from the property you are accessing. e.g. **.Age** is a proposition property, and **.Primary.Age** is a customer property.
 

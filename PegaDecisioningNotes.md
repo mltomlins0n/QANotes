@@ -4,10 +4,10 @@
 
 * [Objectives](#obj)
 * [Next-Best-Action (NBA)](#NBA)
+* [NBA Designer](#NBADesign)
 * [Propositions](#prop)
   * [Dynamic Pricing](#pricing)
   * [Prioritization](#priority)
-* [NBA Designer](#NBADesign)
 
 <a name="obj"></a>
 ## Objectives
@@ -53,6 +53,19 @@ Two conditions must be met for the Customer Decision Hub to consider an offer fo
 * The **Active** attribute is set on the offer.
 * The offer belongs to the **first relevant action** in the NBA hierarchy.
 
+<a name="NBADesign"></a>
+## NBA Designer
+
+The Next-Best-Action Designer is a design wizard that automates the NBA strategy design process.
+
+Designs can be either **Top-Down** or **Bottom-Up**.
+
+In a Top-Down design, you start at the NBA node and work your way down the hierarchy to the issue-level node, and down again to the group level node. e.g. **NBA > Sales > CreditCards.**
+
+The bottom-up approach reverses this, you start at the group level and deisgn upwards, through the issue-level node and up to the top level NBA node. e.g. **CreditCards > Sales > NBA.**
+
+The idea behind these 2 approaches is that either is fine, it's about allowing different teams to work in parallel, and independently in the design phase.
+
 <a name="prop"></a>
 ## Propositions
 
@@ -87,17 +100,3 @@ Propositions can be ranked using a **prioritize** decision component. This compo
 
 * Ranks propositions based on an expression.
 * Selects the highest ranked proposition from the list.
-
-<a name="NBADesign"></a>
-## NBA Designer
-
-The Next-Best-Action Designer is a design wizard that automates the NBA strategy design process.
-
-Designs can be either **Top-Down** or **Bottom-Up**.
-
-In a Top-Down design, you start at the NBA node and work your way down the hierarchy to the issue-level node, and down again to the group level node. e.g. **NBA > Sales > CreditCards.**
-
-The bottom-up approach reverses this, you start at the group level and deisgn upwards, through the issue-level node and up to the top level NBA node. e.g. **CreditCards > Sales > NBA.**
-
-The idea behind these 2 approaches is that either is fine, it's about allowing different teams to work in parallel, and independently in the design phase.
-

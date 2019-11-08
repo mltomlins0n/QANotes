@@ -15,6 +15,7 @@
   * [Adaptive](#adapt)
   * [Predictive vs Adaptive](#predictVSadapt)
 * [Interaction History](#history)
+* [Decisioning Simulations](#sim)
 
 <a name="obj"></a>
 ## Objectives
@@ -190,4 +191,17 @@ It is possible to implement hundreds of adaptive models in a solution because of
 Interaction History gives Pega Decision Managements its long term memory. It captures every customer response to every NBA, even if the response is no response.
 
 Interaction History can be added to a strategy using the **Interaction History** component.
+
+<a name="sim"></a>
+## Decisioning Simulations
+
+Decisioning simulations enable you to execute a complex or simple decisioning strategy using a large customer sample and then examine the projected level of offer acceptance or rejection across a number of inbound and outbound channels.
+
+Making multiple simultaeneous decisions like this is called **batch decisioning**.
+
+To execute a decisioning simulation, instead of a single customer profile, we need customer data for a group of customers. In a simulation context, we call this simulation data, or input population. This data can be a real sample of the customer database, or some generated customer data, often making use of a Monte Carlo (random) data set.
+
+In the simulation run, a decision strategy is applied against each customer in the population. The result of the simulation is stored in a database table or in a Visual Business Director (VBD) data source. When stored in a database table, you can analyze the reports using standard Pega Platform reports.
+
+One of the most common use case for decisioning simulations is **A/B** testing. By completing 2 simulation runs we can generate 2 data sets that can be compared with each other. Testing two strategies against each other is also known as **champion-challenger**. The champion strategy is your default, and you run a challenger strategy against it. Strategies can be compared this way without taking a strategy into production. This is also called **what-if** testing.
 

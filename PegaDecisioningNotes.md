@@ -19,6 +19,7 @@
 * [Arbitrating between Propositions](#arbitrate)
 * [Evaluating Customer Credit Score](#credit)
   * [Decision Tables](#decisionTable)
+* [Product Holdings](#holdings)
 
 <a name="obj"></a>
 ## Objectives
@@ -229,5 +230,19 @@ The output of a scorecard component can used in a decision table.
 
 Processing of a decision table stops once a condition is satisfied, like a switch statement.
 
+<a name="holdings"></a>
+## Product Holdings
 
+When selecting which offer to make to a customer it is important that roducts that a customer already has are excluded from the ones offered.
 
+There are 3 components used by a decision analyst to cheive this:
+
+* Data Import
+* Data Join
+* Data Filter
+
+A **Data Import** imports that associated data into the strategy, in this case the holdings of each customer.
+
+A **Data Join** is then used to join the product holdings data to the main offers in the strategy. Specifying a join condition flags offers as "not relevant" when the holdings data matches the offer data.
+
+A **Data Filter** then filters out these irrelevant offers.

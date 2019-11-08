@@ -16,6 +16,7 @@
   * [Predictive vs Adaptive](#predictVSadapt)
 * [Interaction History](#history)
 * [Decisioning Simulations](#sim)
+* [Arbitrating between Propositions](#arbitrate)
 
 <a name="obj"></a>
 ## Objectives
@@ -204,4 +205,10 @@ To execute a decisioning simulation, instead of a single customer profile, we ne
 In the simulation run, a decision strategy is applied against each customer in the population. The result of the simulation is stored in a database table or in a Visual Business Director (VBD) data source. When stored in a database table, you can analyze the reports using standard Pega Platform reports.
 
 One of the most common use case for decisioning simulations is **A/B** testing. By completing 2 simulation runs we can generate 2 data sets that can be compared with each other. Testing two strategies against each other is also known as **champion-challenger**. The champion strategy is your default, and you run a challenger strategy against it. Strategies can be compared this way without taking a strategy into production. This is also called **what-if** testing.
+
+<a name="arbitrate"></a>
+## Arbitrtating between Propositions
+
+Pega can use switch components to alter the output of a strategy based on customer intent. This enables a company to use **reactive retnention** in an attempt to keep a customer who intends to leave. e.g. a retention offer can be made if the customer intends to leave, or a sales offer can be made if the customer intends to make a purchase. The switch component evaluates a list of conditions in a top down order. When the first condition is met, the result of that component is output, the same as a switch statement.
+
 

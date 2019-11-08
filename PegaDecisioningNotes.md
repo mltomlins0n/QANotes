@@ -17,6 +17,8 @@
 * [Interaction History](#history)
 * [Decisioning Simulations](#sim)
 * [Arbitrating between Propositions](#arbitrate)
+* [Evaluating Customer Credit Score](#credit)
+  * [Decision Tables](#decisionTable)
 
 <a name="obj"></a>
 ## Objectives
@@ -210,5 +212,22 @@ One of the most common use case for decisioning simulations is **A/B** testing. 
 ## Arbitrtating between Propositions
 
 Pega can use switch components to alter the output of a strategy based on customer intent. This enables a company to use **reactive retnention** in an attempt to keep a customer who intends to leave. e.g. a retention offer can be made if the customer intends to leave, or a sales offer can be made if the customer intends to make a purchase. The switch component evaluates a list of conditions in a top down order. When the first condition is met, the result of that component is output, the same as a switch statement.
+
+<a name="credit"></a>
+## Evaluating Customer Credit Score
+
+Customers can be distributed into different segments using a **scorecard** component. A scorecard model is used to segment customers based on a calculation. e.g. customers with a credit score of >=175 qualify for a gold card, between 155 and 175 is silver, otherwise they are rejected. Since this calculation is separate from a filter, the scorecard model can be changed without having to change an entire strategy.
+
+A scorecard must output at least 2 values, usually either **accepted** or **rejected**. To access the output of a scorecard you reference **ScorecardName.pxSegment**. This outputs the segment that the model has calculated. To access the actual values outputted by the model you need to enable **score mapping** when configuring the model.
+
+<a name="decisionTable"></a>
+### Decision Tables
+
+The output of a scorecard component can used in a decision table.
+
+**Any column left blank in a decision table is ignored, and returns true**.
+
+Processing of a decision table stops once a condition is satisfied, like a switch statement.
+
 
 

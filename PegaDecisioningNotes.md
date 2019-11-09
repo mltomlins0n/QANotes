@@ -20,6 +20,7 @@
 * [Evaluating Customer Credit Score](#credit)
   * [Decision Tables](#decisionTable)
 * [Product Holdings](#holdings)
+* [3rd Party Predictive Models](#3rdParty)
 
 <a name="obj"></a>
 ## Objectives
@@ -246,3 +247,24 @@ A **Data Import** imports that associated data into the strategy, in this case t
 A **Data Join** is then used to join the product holdings data to the main offers in the strategy. Specifying a join condition flags offers as "not relevant" when the holdings data matches the offer data.
 
 A **Data Filter** then filters out these irrelevant offers.
+
+<a name="3rdParty"></a>
+## 3rd Party Predictive Models
+
+**PMML = Predictive Model Markup Language**.
+
+The Predictive Model Markup Language (PMML) is an XML-based language used to represent predictive models created as the result of a predictive modelling process. It allows for predictive models to be easily shared between applications. This XML-based language is the de-facto standard to represent not only predictive and descriptive models, but also data transformations (data pre and post-processing).
+
+Predictive modelling is a commonly used statistical technique to predict future behaviour. Predictive modelling solutions are a data-mining technology that works by analysing historical data and generating a model to help predict future outcomes. In predictive modelling, data is collected, a statistical model is formulated, predictions are made, and the model is validated and revised as additional data becomes available.
+
+PMML, like HTML is a Markup Language and as such is split into common components.                          
+
+* Header – It contains general information about the PMML document
+
+* Data Dictionary – It contains a definition of all raw data fields used by the model
+
+* Data Transformation – It provides mapping of user data to a form used by the model
+
+* Model – It contains a definition of the model itself
+
+[Data Mining Group Documentation of PMML](http://dmg.org/pmml/v4-4/GeneralStructure.html)

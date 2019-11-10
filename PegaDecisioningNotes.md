@@ -21,6 +21,8 @@
   * [Decision Tables](#decisionTable)
 * [Product Holdings](#holdings)
 * [3rd Party Predictive Models](#3rdParty)
+* [Adaptive Analytics](#adaptive)
+  * [Adaptive Modelling Cycle](#adaptiveModel)
 
 <a name="obj"></a>
 ## Objectives
@@ -268,3 +270,40 @@ PMML, like HTML is a Markup Language and as such is split into common components
 * Model – It contains a definition of the model itself
 
 [Data Mining Group Documentation of PMML](http://dmg.org/pmml/v4-4/GeneralStructure.html)
+
+<a name="adaptive"></a>
+## Adaptive Analytics
+
+**Pega Adaptive Decision Manager (ADM)** is a component that allows you to build self-learning adaptive models that continuously improve predictions for a customer. A key capability of ADM is that it can automatically detect changes in customer behavior and act on them in real time. This enables business processes and customer interactions to be instantly adapted to a customer’s changing interests and needs.
+
+**Adaptive decisioning continuously increases the accuracy of its decisions by learning from each response to a proposition**.
+
+<a name="adaptiveModel"></a>
+### Adaptive Modelling Cycle
+
+* Capture response data in real time from every customer interaction.
+
+* Regularly:
+  * Use sophisticated auto-grouping to create coarse-grained, statistically reliable numeric intervals, or sets of symbols.
+  * Use predictor grouping to assess inter-correlations in the data.
+  * Use predictor’s selection to establish an uncorrelated view that contains all relevant aspects to the proposition.
+  * Use the resulting statistically robust adaptive scoring model for scoring customers.
+
+* Whenever new data is available, update the scoring model.
+
+Adaptive models accept 2 types of predictors: **symbolic** and **numeric**.
+
+When adding new propositions to strategy models that contain an Adaptive Model, no changes need to be made. Modela are created on the fly when new propositions are taken.
+
+Adaptive models produce 3 outputs:
+
+* **Propensity** - This is the predicted likelihood of positive behavior, such as the likelihood of a customer accepting an offer.  The propensity for every proposition starts at 0.5 or 50%, because in the beginning the model has no response behavior on which to base its predictions.
+
+* **Performance** - This is how well the model is able to differentiate between positive and negative behavior. Again, the initial value for each model is 0.5, with 1.0 being perfect performance. Therefore, the performance value should be somewhere between 0.5 and 1.0.
+
+* **Evidence** - The number of responses used in the propensity calculation.
+
+Performance and Evidence outputs are not mapped automatically, but they can be mapped to a strategy property in the **Output mapping** tab.
+
+Model and Predictor performance is expressed as **area under the curve (AUC)**. A high AUC describes a good predictor and a low AUC is a bad, or inaccurate, predictor. The AUC value shows how much better or worse the model is when compared to a random selection.
+

@@ -340,4 +340,3 @@ Pega Infinity also uses its AI-powered text analytics to enable you to detect th
 The sentiment score is a value between -1 and 1. In the out-of-the-box configuration, a sentiment score <=-0.25 results in a Negative sentiment, a sentiment score between -0.25 and 0.25 results in a Neutral sentiment, and a sentiment score above 0.25 results in a positive sentiment.
 
 Once the email sentiment is detected, you can configure the email channel to route a specific topic with a specific sentiment to a specialized agent for a quick and personalized response. For example, you could route an address change with a neutral sentiment to a Service Agent, a complaint email with a negative sentiment to a Manager, and a credit card inquiry with a negative sentiment to a Financial Services Specialist.
-

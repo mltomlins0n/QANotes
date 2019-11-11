@@ -23,6 +23,8 @@
 * [3rd Party Predictive Models](#3rdParty)
 * [Adaptive Analytics](#adaptive)
   * [Adaptive Modelling Cycle](#adaptiveModel)
+* [Text Analytics](#text)
+  * [Email Routing](#email)
 
 <a name="obj"></a>
 ## Objectives
@@ -306,4 +308,36 @@ Adaptive models produce 3 outputs:
 Performance and Evidence outputs are not mapped automatically, but they can be mapped to a strategy property in the **Output mapping** tab.
 
 Model and Predictor performance is expressed as **area under the curve (AUC)**. A high AUC describes a good predictor and a low AUC is a bad, or inaccurate, predictor. The AUC value shows how much better or worse the model is when compared to a random selection.
+
+<a name="text"></a>
+## Text Analytics
+
+This is the process of extracting meaning from text on a massive scale, converting it to data that can be analysed by a computer.
+
+The process is: 
+
+* Data is fetched from a **data source** such as email, social media, or customer service records.
+
+* **Natural Language Processing (NLP)** is applied to extract certain attributes from the text and presents them as data.
+
+* The resulting data is **stored and analysed**.
+
+<a name="email"></a>
+### Email Routing
+
+Pega Infinity uses AI-powered Natural Language Processing to detect the topic of an email and route the email to the appropriate container.
+
+Email routing is done using the topic detection mechanism. The two types of topic detection are **rule-based** and **model-based**.
+
+In **rule-based** topic detection the routing is based on the rules configured in the email channel. AI-powered text analytics is used to detect the topic of the email, and the channel rules route it to the right container. This type of topic detection may detect one or more topics if the email contains words associated with more than one topic. In this case, the email is routed to two different containers based on those topics.
+
+In **model-based** topic detection the routing is based on AI models built by a Data Scientist using machine learning. Building these models requires a training data set and a test data set. The data sets consist of a list of emails and the associated topic for each email. This type of topic detection identifies the most accurate topic based on the AI model and training set used by the Data Scientist.
+
+Pega Infinity also enables you to extract entities from an email. This means that when an email is sent, certain entities such as account number, email address, street address, etc. can be automatically detected and extracted. This allows certain emails to be automatically processed or given priority.
+
+Pega Infinity also uses its AI-powered text analytics to enable you to detect the sentiment of an email based on its content.
+
+The sentiment score is a value between -1 and 1. In the out-of-the-box configuration, a sentiment score <=-0.25 results in a Negative sentiment, a sentiment score between -0.25 and 0.25 results in a Neutral sentiment, and a sentiment score above 0.25 results in a positive sentiment.
+
+Once the email sentiment is detected, you can configure the email channel to route a specific topic with a specific sentiment to a specialized agent for a quick and personalized response. For example, you could route an address change with a neutral sentiment to a Service Agent, a complaint email with a negative sentiment to a Manager, and a credit card inquiry with a negative sentiment to a Financial Services Specialist.
 

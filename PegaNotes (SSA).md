@@ -4,6 +4,7 @@
 
 * [Enterprise Class Structure](#enterprise)
   * [Enterprise Class Structure Layers](#layers)
+* [Managing Application Development](#dev)
 
 <a name="enterprise"></a>
 ## Enterprise Class Structure
@@ -46,4 +47,7 @@ The **Framework** layer contains assets that can be extended in specific impleme
 The **Implementation** layer defines an application customized for a specific division or line of business. This may extend one or more framework layer applications.
 
 For example, a dealer may have two brands, one focussed on luxury cars, and one on value for money cars. Each brand needs to manage sales. The dealer can use a generalized application that manages sales in the framework layer. Each brand can then extend this on the implementation layer to customize their own sales process. Each custom application contains brand-specific assets, such as styling and policies.
+
+<a name="dev"></a>
+## Managing Application Devlopment (Unit 7)
 

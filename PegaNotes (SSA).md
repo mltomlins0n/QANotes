@@ -51,3 +51,7 @@ For example, a dealer may have two brands, one focussed on luxury cars, and one 
 <a name="dev"></a>
 ## Managing Application Devlopment (Unit 7)
 
+A **branch** in Pega is a container for rulesets with records that are undergoing rapid changes. Rulesets associated with a branch are called **branch rulesets**.
+
+Branches are usually created for each team and allow development to occur without impacting other teams' work.
+

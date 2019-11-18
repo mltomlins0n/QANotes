@@ -4,6 +4,7 @@
 
 * [Enterprise Class Structure](#enterprise)
   * [Enterprise Class Structure Layers](#layers)
+* [Application Versioning](#version)
 * [Managing Application Development](#dev)
 * [Circumstancing](#circumstance)
 
@@ -48,6 +49,29 @@ The **Framework** layer contains assets that can be extended in specific impleme
 The **Implementation** layer defines an application customized for a specific division or line of business. This may extend one or more framework layer applications.
 
 For example, a dealer may have two brands, one focussed on luxury cars, and one on value for money cars. Each brand needs to manage sales. The dealer can use a generalized application that manages sales in the framework layer. Each brand can then extend this on the implementation layer to customize their own sales process. Each custom application contains brand-specific assets, such as styling and policies.
+
+<a name="version"></a>
+## Application Versioning
+
+Pega provides two methods for creating new versions of an application. Each method preserves prior application versions. Application versioning is a way to differentiate current and past application configurations. Rule resolution can look through all the minor and patch versions for the current major ruleset.
+
+Application components include the application **ruleset stack** — this contains the rules and data types used by the application. To version an application, you must version the application's rulesets.
+
+The versioning methods are **lock and roll** and **skimming**. The act of using a version method begins a release cycle. Every major version, minor version, and patch version represents a release cycle. Both methods list the highest version, and offers to roll the ruleset to a still-higher version by default.
+
+**Loack and Roll** is best for incrementing **patch** versions, and **Skimming** is better for **major** and **minor** versions.
+
+### Lock and Roll
+
+When using this method you create a new empty ruleset version and copy the necessary rules into that new version.
+
+When updating a version, Pega checks the previous minor version to find existing rules. Pega cannot find rules if they exist in a different **major** version.
+
+### Skimming
+
+Skimming saves the highest version of a ruleset into a new, higher ruleset version; and applies mainly to resolved rules. The two types of skimming are **major** and **minor** skimming, and these correspond to the update types.
+
+If a rule is available, blocked, final, or withdrawn, it is carried forward when skimming. The only exception is that withdrawn rules **are not carried over** in a major skimming update.
 
 <a name="dev"></a>
 ## Managing Application Devlopment (Unit 7)

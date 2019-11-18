@@ -162,5 +162,5 @@ The search duplicate cases process then displays to the user the current case an
 
 Once a case meets the condition specified by the organization, such as a customer change of address where the address entered is different from the current address, the case can be recorded in the database (persisted) for future reference.
 
-Temporary cases are processed by a single operator and cannot be routed until it is persisted.
+Temporary cases are processed by a single operator and cannot be routed until they are persisted.
 

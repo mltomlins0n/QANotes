@@ -7,6 +7,7 @@
 * [Application Versioning](#version)
 * [Managing Application Development](#dev)
 * [Circumstancing](#circumstance)
+* [Duplicate and Temporary Cases](#cases)
 
 ___
 
@@ -141,4 +142,15 @@ Circumstanced rules can be overidden in 2 ways:
 * **Withdrawing a rule** - A withdrawn rule hides previous circumstanced versions of a rule and reverts to the base rule.
 
 When selecting which rule to use, Pega looks to the newest ruleset version **regardless of circumstancing**. e.g. If your have two rulesets, **01-01-42 (no circumstance)**, and **01-01-20 (circumstance you want to use)**, Pega will run the most recent rulset. In this case, **01-01-42**.
+
+<a name="cases"></a>
+## Duplicate and Temporary Cases (Unit 13)
+
+Duplicate cases can be found using the **search duplicate cases** step in a case life cycle. When a case enters the step, the system uses **basic** and **weighted** conditions to compare specific property values with cases already present in the system. 
+
+All basic conditions must be met before considering potential duplicate cases. Once all basic conditions are met, the system continues to evaluate the weighted conditions to receive a weight value. Each condition has a weight (between 1 and 100) to determine the relative importance of a condition when making the comparisons. 
+
+The system adds up the weights of all the conditions that evaluate to true. If the sum exceeds a specified threshold value, the system flags the current case as a potential duplicate. 
+
+The search duplicate cases process then displays to the user the current case and the matching case in the system. The user may identify a potential duplicate from the list and resolve the current case as a duplicate. The system does not process the case further. The user may also decide that the current case is not a duplicate and may choose to continue processing the case.
 

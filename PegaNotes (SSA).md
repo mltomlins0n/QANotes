@@ -146,6 +146,8 @@ When selecting which rule to use, Pega looks to the newest ruleset version **reg
 <a name="cases"></a>
 ## Duplicate and Temporary Cases (Unit 13)
 
+### Duplicate Cases
+
 Duplicate cases can be found using the **search duplicate cases** step in a case life cycle. When a case enters the step, the system uses **basic** and **weighted** conditions to compare specific property values with cases already present in the system. 
 
 All basic conditions must be met before considering potential duplicate cases. Once all basic conditions are met, the system continues to evaluate the weighted conditions to receive a weight value. Each condition has a weight (between 1 and 100) to determine the relative importance of a condition when making the comparisons. 
@@ -153,4 +155,12 @@ All basic conditions must be met before considering potential duplicate cases. O
 The system adds up the weights of all the conditions that evaluate to true. If the sum exceeds a specified threshold value, the system flags the current case as a potential duplicate. 
 
 The search duplicate cases process then displays to the user the current case and the matching case in the system. The user may identify a potential duplicate from the list and resolve the current case as a duplicate. The system does not process the case further. The user may also decide that the current case is not a duplicate and may choose to continue processing the case.
+
+### Temporary Cases
+
+**Temporary cases are only stored in memory, on the clipboard and do not have case ID's. This is useful for saving storage and improving system performance**.
+
+Once a case meets the condition specified by the organization, such as a customer change of address where the address entered is different from the current address, the case can be recorded in the database (persisted) for future reference.
+
+Temporary cases are processed by a single operator and cannot be routed until it is persisted.
 

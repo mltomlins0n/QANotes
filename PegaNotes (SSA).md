@@ -53,6 +53,8 @@ For example, a dealer may have two brands, one focussed on luxury cars, and one 
 <a name="version"></a>
 ## Application Versioning
 
+**When creating a new application version it is best practive ensure that the rules for the new version are checked in, and to lock all but the highest ruleset versions before proceeding**.
+
 Pega provides two methods for creating new versions of an application. Each method preserves prior application versions. Application versioning is a way to differentiate current and past application configurations. Rule resolution can look through all the minor and patch versions for the current major ruleset.
 
 Application components include the application **ruleset stack** — this contains the rules and data types used by the application. To version an application, you must version the application's rulesets.
@@ -67,11 +69,28 @@ When using this method you create a new empty ruleset version and copy the neces
 
 When updating a version, Pega checks the previous minor version to find existing rules. Pega cannot find rules if they exist in a different **major** version.
 
+There are 3 options when updating the application rule:
+
+* **Do not update my application** is used when applying a patch update.
+
+* **Update my Application to include the new Rulset Versions** is used when you are rolling out a new minor version, or when the application rule lists the patch number.
+
+* **Create a new version of my application** is used when:
+  * You want to create a new application rule. This could be creating a new version or description of the application.
+
+  * You want to allow access the current and new versions of the application, during a test peroid or phased roll out for example.
+
 ### Skimming
 
 Skimming saves the highest version of a ruleset into a new, higher ruleset version; and applies mainly to resolved rules. The two types of skimming are **major** and **minor** skimming, and these correspond to the update types.
 
 If a rule is available, blocked, final, or withdrawn, it is carried forward when skimming. The only exception is that withdrawn rules **are not carried over** in a major skimming update.
+
+After performing a skimming update, you must update:
+
+* Application rules
+* The required rulsesets and versions array in RuleSet version rules
+* Access groups, to reference the new major version
 
 <a name="dev"></a>
 ## Managing Application Devlopment (Unit 7)

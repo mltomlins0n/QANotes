@@ -9,6 +9,7 @@
 * [Circumstancing](#circumstance)
 * [Duplicate and Temporary Cases](#cases)
 * [Parallel Processing](#parallel)
+  * [Case Locking](#lock)
 ___
 
 <a name="enterprise"></a>
@@ -182,3 +183,12 @@ The Join conditions for parallel processing are:
 * **Some** - Uses a when rule or a count to determine when the main process can resume.
 
 * **Iterate** - On the **Split For Each** shape, this starts flows for items in the page list or group and tests an optional when condition to determine whether to start a flow for a given iteration.
+
+<a name="lock"></a>
+### Case Locking
+
+The default type of case locking in Pega is **Allow one user**. This locks a case when an operator opens it. If a second operator tries to open the same case, they can only do so in **review mode**. Pega locks the case for **30 minutes** or until the **user submits or closes the case**, whichever comes first.
+
+**Allow multiple users** enables multiple operators to update the same case at the same time. A lock only occurs when the user submits the case. Changes are made by whichever operator submits first. When a second operator submits, they must refresh the case to get the new changes made by the first operator. The second operator can then submit their changes. 
+
+Cases are locked on **parent** cases, and cascade down to any child cases created, the default being **allow one user**. This can be overwritten at the **child** case level, when multiple users need to access the child cases. 

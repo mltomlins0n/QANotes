@@ -26,6 +26,8 @@
 * [Text Analytics](#text)
   * [Email Routing](#email)
 
+___
+
 <a name="obj"></a>
 ## Objectives
 
@@ -40,6 +42,8 @@
 * Prioritize propositions based on predicted customer behaviour.
 
 * Run alternative strategies and compare the results using Visual Business Director.
+
+___
 
 <a name="NBA"></a>
 ## Next-Best-Action (NBA)
@@ -70,6 +74,8 @@ Two conditions must be met for the Customer Decision Hub to consider an offer fo
 * The **Active** attribute is set on the offer.
 * The offer belongs to the **first relevant action** in the NBA hierarchy.
 
+___
+
 <a name="NBADesign"></a>
 ## NBA Designer
 
@@ -82,6 +88,8 @@ In a Top-Down design, you start at the NBA node and work your way down the hiera
 The bottom-up approach reverses this, you start at the group level and deisgn upwards, through the issue-level node and up to the top level NBA node. e.g. **CreditCards > Sales > NBA.**
 
 The idea behind these 2 approaches is that either is fine, it's about allowing different teams to work in parallel, and independently in the design phase.
+
+___
 
 <a name="prop"></a>
 ## Propositions
@@ -140,6 +148,8 @@ Eligibility rules in Pega are **When** rules. To implement an eligibility rule y
 
 Both **cusomter** and **proposition** properties can be used in eligibility rules. To access a proposition property, just omit the ".Primary" from the property you are accessing. e.g. **.Age** is a proposition property, and **.Primary.Age** is a customer property.
 
+___
+
 <a name="data"></a>
 ## Data Analytics
 
@@ -194,12 +204,16 @@ Some behavior types don’t happen quickly. For instance, with loan defaults or 
 
 It is possible to implement hundreds of adaptive models in a solution because of the high degree of automation. As a result, predictive models are useful for determining more subtle and often high value behavior types.
 
+___
+
 <a name="history"></a>
 ## Interaction History
 
 Interaction History gives Pega Decision Managements its long term memory. It captures every customer response to every NBA, even if the response is no response.
 
 Interaction History can be added to a strategy using the **Interaction History** component.
+
+___
 
 <a name="sim"></a>
 ## Decisioning Simulations
@@ -214,10 +228,14 @@ In the simulation run, a decision strategy is applied against each customer in t
 
 One of the most common use case for decisioning simulations is **A/B** testing. By completing 2 simulation runs we can generate 2 data sets that can be compared with each other. Testing two strategies against each other is also known as **champion-challenger**. The champion strategy is your default, and you run a challenger strategy against it. Strategies can be compared this way without taking a strategy into production. This is also called **what-if** testing.
 
+___
+
 <a name="arbitrate"></a>
 ## Arbitrtating between Propositions
 
 Pega can use switch components to alter the output of a strategy based on customer intent. This enables a company to use **reactive retnention** in an attempt to keep a customer who intends to leave. e.g. a retention offer can be made if the customer intends to leave, or a sales offer can be made if the customer intends to make a purchase. The switch component evaluates a list of conditions in a top down order. When the first condition is met, the result of that component is output, the same as a switch statement.
+
+___
 
 <a name="credit"></a>
 ## Evaluating Customer Credit Score
@@ -235,6 +253,8 @@ The output of a scorecard component can used in a decision table.
 
 Processing of a decision table stops once a condition is satisfied, like a switch statement.
 
+___
+
 <a name="holdings"></a>
 ## Product Holdings
 
@@ -251,6 +271,8 @@ A **Data Import** imports that associated data into the strategy, in this case t
 A **Data Join** is then used to join the product holdings data to the main offers in the strategy. Specifying a join condition flags offers as "not relevant" when the holdings data matches the offer data.
 
 A **Data Filter** then filters out these irrelevant offers.
+
+___
 
 <a name="3rdParty"></a>
 ## 3rd Party Predictive Models
@@ -272,6 +294,8 @@ PMML, like HTML is a Markup Language and as such is split into common components
 * Model – It contains a definition of the model itself
 
 [Data Mining Group Documentation of PMML](http://dmg.org/pmml/v4-4/GeneralStructure.html)
+
+___
 
 <a name="adaptive"></a>
 ## Adaptive Analytics
@@ -309,6 +333,8 @@ Performance and Evidence outputs are not mapped automatically, but they can be m
 
 Model and Predictor performance is expressed as **area under the curve (AUC)**. A high AUC describes a good predictor and a low AUC is a bad, or inaccurate, predictor. The AUC value shows how much better or worse the model is when compared to a random selection.
 
+___
+
 <a name="text"></a>
 ## Text Analytics
 
@@ -340,3 +366,6 @@ Pega Infinity also uses its AI-powered text analytics to enable you to detect th
 The sentiment score is a value between -1 and 1. In the out-of-the-box configuration, a sentiment score <=-0.25 results in a Negative sentiment, a sentiment score between -0.25 and 0.25 results in a Neutral sentiment, and a sentiment score above 0.25 results in a positive sentiment.
 
 Once the email sentiment is detected, you can configure the email channel to route a specific topic with a specific sentiment to a specialized agent for a quick and personalized response. For example, you could route an address change with a neutral sentiment to a Service Agent, a complaint email with a negative sentiment to a Manager, and a credit card inquiry with a negative sentiment to a Financial Services Specialist.
+
+___
+

@@ -8,7 +8,7 @@
 * [Managing Application Development](#dev)
 * [Circumstancing](#circumstance)
 * [Duplicate and Temporary Cases](#cases)
-
+* [Parallel Processing](#parallel)
 ___
 
 <a name="enterprise"></a>
@@ -164,3 +164,11 @@ Once a case meets the condition specified by the organization, such as a custome
 
 Temporary cases are processed by a single operator and cannot be routed until they are persisted.
 
+<a name="parallel"></a>
+## Parallel processing (Unit 15)
+
+You use the **Split Join** shape to call multiple processes that operate in parallel then rejoin the main flow. **Join conditions** can be specified to determine when the main process can continue.
+
+A **Split For Each** is used to run a subprocess multiple times by iterating through a set of records in a page list or page group. When the items have been processed, the main flow continues.
+
+**Spinoff** subprocesses allow you to run a subprocess in parallel to the main flow. The main process does not wait for the spinoff to complete befoire proceeding. 

@@ -125,7 +125,7 @@ e.g `cat file | cut -d "," -f1-3`
 
 Displays unique and non unique rows of data, only works if data is sorted so that unique data is grouped.
 
-----------------------------------------------------------------------------------------------------
+___
 
 # Scripting
 
@@ -209,4 +209,4 @@ e.g. `until [ $looper -ge 5 ] `
 ```
 **You must use the -a flag with the delcare keyword to declare an array**  
 
-
+___

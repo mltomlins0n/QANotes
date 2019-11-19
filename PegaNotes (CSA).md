@@ -20,6 +20,7 @@
 * [Validation Rules](#validation)
 * [Declare Expressions](#declare)
 
+___
 
 <a name="case"></a>
 ## Case Life Cycle
@@ -55,6 +56,8 @@ Cases sometimes have an intial urgency. This is set before the case has even sta
 
 The "Goal" interval defines the amount of time in which the case or step should be completed.
 
+___
+
 <a name="parallel"></a>
 ## Parallel Processing
 
@@ -63,6 +66,8 @@ If processes can be performed in any order, they can be configured as parallel.
 2 or more processes can be parallel.
 
 This allows cases to advance through multiple paths at the same time within a stage.
+
+___
 
 <a name="routing"></a>
 ## Routing Work
@@ -91,6 +96,8 @@ You route an assignment to the work list of a **specific user** if only that use
 You route to a **work queue** for a specific group when anyone in the group can complete the assignment. E.g. anyone in payroll could send payments to employees.
 
 For more complex routing you can use **business logic** to route assignments. This is based on a **when** condition to route work based on certain conditions. A when rule can have multiple conditions.
+
+___
 
 <a name="rules"></a>
 ## Rules
@@ -137,6 +144,8 @@ Each entry in the ruleset stack represents all the versions of the specified rul
 
 Each version of an application contains a unique ruleset stack. This allows an updated application to reference new ruleset versions that contain updates and new features.
 
+___
+
 <a name="classes"></a>
 ## Classes
 
@@ -165,6 +174,8 @@ The class heirarchy determines how system architects can reuse rules in the appl
 - Base classes provided by Pega. These classes contains rules that provide basic functionality for processing cases.
 
 Any rule available to an application through the class hierarchy is considered in scope. Rules that an application cannot access through the class hierarchy are considered out of scope.
+
+___
 
 <a name="inheritance"></a>
 ## Inheritance
@@ -197,6 +208,8 @@ In directed inheritance, the parent class is explicitly specified. You apply dir
 ### Resusing Rules Through Inheritance
 
 When attempting to reuse rules through inheritance, Pega first searches through the parent classes indicated by pattern inheritance. If unsuccessful, Pega then searches the parent class indicated by directed inheritance as the basis for another pattern inheritance search. This process repeats until Pega reaches the last class in the class hierarchy, called the ultimate base class or @baseclass. If the rule cannot be found after searching @baseclass, Pega returns an error.
+
+___
 
 <a name="data"></a>
 ## Data Elements
@@ -253,6 +266,8 @@ There are 3 scopes for data pages:
 
 - **Node** - Node level scope is used to make a data page instance accessible by all users of the application, and other applications running on a given node.
 
+___
+
 <a name="propertyRules"></a>
 ## Pega Property Rules
 
@@ -263,6 +278,8 @@ Pega comes with a set of standard property rules. The standard properties have n
 - **py** - you can use these in your application
 
 - **pz** - Supports internal system processing, these values may change with new product releases. You can read but not write to these properties.
+
+___
 
 <a name="validation"></a>
 ## Validation Rules
@@ -281,6 +298,8 @@ In another example, an email address can reference an edit rule to test whether 
 
 Edit validate rules run when the user exits a field if the harness rule is configured to support client-side validation. Otherwise, edit validate rules are run when the user submits a form.
 
+___
+
 <a name="declare"></a>
 ## Declare Expressions
 
@@ -291,3 +310,6 @@ Declare expressions compute a value based on an expression and are automatically
 - Declarative processing rules - allow configuration of app so that it **automatically updates property values** such as total order amount. e.g. when laptops are ordered by a user, the system multiplies the price of one laptop by the quantity to calculate total order amount. The updates only occur when triggered in the application defined using the trigger event. It monitors changes to the value and runs a computation to apply changes when it does. Used when rules need to be executed all the time, when the input data is changed or the result of the rule is used.
 
 - Procedural processing rules - depends upon rules, such as data transforms, activities to instruct the application when to look for a trigger event. **Only changes data when the user submits a form**. To make the changes visible to the users as they enter values, you must configure sections to use the data transform to refresh the fields. Use at well defined intervals or have a control to fire off the expression
+
+___
+

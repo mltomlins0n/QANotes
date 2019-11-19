@@ -172,3 +172,13 @@ You use the **Split Join** shape to call multiple processes that operate in para
 A **Split For Each** is used to run a subprocess multiple times by iterating through a set of records in a page list or page group. When the items have been processed, the main flow continues.
 
 **Spinoff** subprocesses allow you to run a subprocess in parallel to the main flow. The main process does not wait for the spinoff to complete befoire proceeding. 
+
+The Join conditions for parallel processing are:
+
+* **Any** - Main flow resumes when any of the conditions are met. Other subprocesses are stopped if they are not complete and open assignments for these subprocesses are cancelled.
+
+* **All** - Main flow only resumes when all subprocesses are complete.
+
+* **Some** - Uses a when rule or a count to determine when the main process can resume.
+
+* **Iterate** - On the **Split For Each** shape, this starts flows for items in the page list or group and tests an optional when condition to determine whether to start a flow for a given iteration.

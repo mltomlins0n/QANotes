@@ -10,6 +10,7 @@
 * [Duplicate and Temporary Cases](#cases)
 * [Parallel Processing](#parallel)
   * [Case Locking](#lock)
+* [Flow Action Processing](#flow)
 ___
 
 <a name="enterprise"></a>
@@ -192,3 +193,15 @@ The default type of case locking in Pega is **Allow one user**. This locks a cas
 **Allow multiple users** enables multiple operators to update the same case at the same time. A lock only occurs when the user submits the case. Changes are made by whichever operator submits first. When a second operator submits, they must refresh the case to get the new changes made by the first operator. The second operator can then submit their changes. 
 
 Cases are locked on **parent** cases, and cascade down to any child cases created, the default being **allow one user**. This can be overwritten at the **child** case level, when multiple users need to access the child cases.
+
+<a name="flow"></a>
+## Flow Action Processing (Unit 17)
+
+**In Pega, you can add pre- and post-processing actions to a flow action to manipulate data. These actions enable you to add related tasks to the flow action. For example, you can concatenate a person's first name and last name to create their full name**.
+
+Pre-processing begins when a user selects a flow action as well as when the user is presented with the assignment. So if a user completes an assignment, then returns to is later, pre-processing will happen again. Logic can be added to test whether this should happen.
+
+Pre-processing actions could be running a data transform, initializing a value, or initializing a list.
+
+Consider the possibility of reuse when decising whether to use a pre-processing action. If a pre- or post-processing action applies to only one case type, then specialize the flow action for the case type instead of adding the pre-or post-processing action.
+

@@ -250,3 +250,6 @@ The structure of such a decision tree might look like this:
 Clicking **Show conflicts** when creating a decision tree shows any unreachable conditions.
 
 Clicking **Show completeness** adds rows to indicate values that will not be evaluated. These are suggested conditions to add.
+
+___
+

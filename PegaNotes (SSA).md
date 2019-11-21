@@ -11,6 +11,7 @@
 * [Parallel Processing](#parallel)
   * [Case Locking](#lock)
 * [Flow Action Processing](#flow)
+* [Decision Tables and Trees](#decision)
 ___
 
 <a name="enterprise"></a>
@@ -145,6 +146,8 @@ Circumstanced rules can be overidden in 2 ways:
 
 When selecting which rule to use, Pega looks to the newest ruleset version **regardless of circumstancing**. e.g. If your have two rulesets, **01-01-42 (no circumstance)**, and **01-01-20 (circumstance you want to use)**, Pega will run the most recent rulset. In this case, **01-01-42**.
 
+___
+
 <a name="cases"></a>
 ## Duplicate and Temporary Cases (Unit 13)
 
@@ -165,6 +168,8 @@ The search duplicate cases process then displays to the user the current case an
 Once a case meets the condition specified by the organization, such as a customer change of address where the address entered is different from the current address, the case can be recorded in the database (persisted) for future reference.
 
 Temporary cases are processed by a single operator and cannot be routed until they are persisted.
+
+___
 
 <a name="parallel"></a>
 ## Parallel processing (Unit 15)
@@ -194,6 +199,8 @@ The default type of case locking in Pega is **Allow one user**. This locks a cas
 
 Cases are locked on **parent** cases, and cascade down to any child cases created, the default being **allow one user**. This can be overwritten at the **child** case level, when multiple users need to access the child cases.
 
+___
+
 <a name="flow"></a>
 ## Flow Action Processing (Unit 17)
 
@@ -205,3 +212,41 @@ Pre-processing actions could be running a data transform, initializing a value, 
 
 Consider the possibility of reuse when decising whether to use a pre-processing action. If a pre- or post-processing action applies to only one case type, then specialize the flow action for the case type instead of adding the pre-or post-processing action.
 
+___
+
+<a name="decision"></a>
+## Decision Tables and Trees (Unit 19)
+
+Decision tables are used when you need to test the values of multiple properties to make a decision.
+
+Decision tables are laid out like spreadsheets, with rows and columns. 
+A decision table is a table of conditions and results. You define a set of conditions – for example, property values that must fall within a certain range – and the results to return when the conditions are true. Each set of conditions contains a corresponding result. You can add columns for each condition you want to test against – either a property reference or an expression – and rows for each combination of conditions you want to test.
+
+When the system evaluates a decision table, it starts with the top row and evaluates each condition in the row. If **all of the conditions are true**, the system returns the result for that row. If not, it advances to the next row, and evaluates the conditions in that row. And if none of the combinations returns a result, the system returns the **otherwise result** at the bottom of the table. This ensures that the r decision always returns a result.
+
+A decision table uses an **equals** condition by default to evaluate a condition. **Greater than** and **less than** can be used when evaluating numerical conditions.
+
+Enabling the **Evaluate all rows** option on a decision table makes that table evaluate all of its rows and return an array of the results.
+
+### Decision Trees
+
+Decisoin trees can also be used to handle logic that calculates a value from a set of test conditions.
+
+While decision tables evaluate against the **same set** of properties or conditions, decision trees evaluate against **different** properties or conditions. While a decision table stops execution when it gets a **true** result, a decision tree can make additional evaluations after getting a **true** result.
+
+A decision starts at the top of a decision tree and proceeds downwards, each **true** result advancing the decision process.
+
+Decision trees contain condition branches — a comparison value, a comparison operator, and an action. The action can be to return a result, to continue the evaluation, or stop the evaluation. The branches are organized in a hierarchical tree structure. Typically, you specify common conditions and results at the trunk of the tree. You then extend the tree outward to more-specific conditions and their actions. When the decision tree is invoked, the system evaluates the top row and continues until it reaches a result that evaluates to true. The result is returned to the system. If the system processes through all the branches but does not reach a returned result, the system returns the final otherwise value.
+
+Decision tree branches can be nested. For example, if a pruchase request is for **> $100**, the request must be routed for approval. Two possible outcomes of approval exist and must now be evaluated. If a purchase request is for **< $100** (the original condition is false), the two approval outcomes **do not** need to be evaluated.
+
+The structure of such a decision tree might look like this:
+
+* Purchase Request > $100 then continue
+  * If department == Consulting then return Compliance
+  * Otherwise return Work Manager
+* Otherwise return No Approval Needed
+
+Clicking **Show conflicts** when creating a decision tree shows any unreachable conditions.
+
+Clicking **Show completeness** adds rows to indicate values that will not be evaluated. These are suggested conditions to add.

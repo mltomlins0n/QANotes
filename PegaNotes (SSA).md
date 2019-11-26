@@ -12,6 +12,7 @@
   * [Case Locking](#lock)
 * [Flow Action Processing](#flow)
 * [Decision Tables and Trees](#decision)
+* [Case Approval](#approve)
 ___
 
 <a name="enterprise"></a>
@@ -252,4 +253,19 @@ Clicking **Show conflicts** when creating a decision tree shows any unreachable 
 Clicking **Show completeness** adds rows to indicate values that will not be evaluated. These are suggested conditions to add.
 
 ___
+
+<a name="approve"></a>
+## Case Approval (Unit 21)
+
+Cases can either be **single approval** or **cascading approval**.
+
+The two types of cascading approval are **Reporting structure** and **authority matrix**.
+
+You use the reporting structure model when approvals **always move up** the reporting structure of the submitter or another defined list.
+
+You use the authority matrix model when a set of rules directs the approval chain to individuals both inside and outside the organization of the submitter.
+
+An authority matrix uses a decision table. The decision table identifies each party in the approval process as well as the conditions that determine when each party must provide approval.
+
+The application evaluates the decision table. Each satisfied row or condition adds the results to a (page) list of approvers. Approval assignments route to approvers in the order of list appearance.
 

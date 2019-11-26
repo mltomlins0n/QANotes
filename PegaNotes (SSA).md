@@ -13,6 +13,7 @@
 * [Flow Action Processing](#flow)
 * [Decision Tables and Trees](#decision)
 * [Case Approval](#approve)
+* [Organizational Records](#organize)
 ___
 
 <a name="enterprise"></a>
@@ -268,4 +269,23 @@ You use the authority matrix model when a set of rules directs the approval chai
 An authority matrix uses a decision table. The decision table identifies each party in the approval process as well as the conditions that determine when each party must provide approval.
 
 The application evaluates the decision table. Each satisfied row or condition adds the results to a (page) list of approvers. Approval assignments route to approvers in the order of list appearance.
+
+___
+
+<a name="organize"></a>
+Organizational Records (Unit 23)
+
+**A Pega application uses an organizational structure to direct assignments to the right operator or work queues, determine the access rights of operators, and report on activity in various company departments**.
+
+The Pega organizational structure is a three-level hierarchy. The top level is known as the **organization**, the middle level contains **divisions**, and the lowest level contains organization **units**.
+
+* A heirarchy has only one **Organization**, representing the entire enterprise.
+
+* A **division** represents a category of a business unit such as a regions, brand, or department.
+
+* A **unit** contains operators wh operform work specific to their organization. This could be caseworkers, agents, and customer service representatives. 
+
+A unit can have **child units**. For exmaple, two units (Hardware and Software) may report to a parent unit (Internal) in the IT division.
+
+An operator is associated with a unit, division, and organization. The operator ID record (also an organization rule) stores the organizational structure of the operator. You can update the organization structure, if necessary.
 

@@ -289,3 +289,5 @@ A unit can have **child units**. For exmaple, two units (Hardware and Software) 
 
 An operator is associated with a unit, division, and organization. The operator ID record (also an organization rule) stores the organizational structure of the operator. You can update the organization structure, if necessary.
 
+___
+

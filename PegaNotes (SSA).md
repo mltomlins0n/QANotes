@@ -15,6 +15,7 @@
 * [Case Approval](#approve)
 * [Organizational Records](#organize)
 * [Configuring Field Values](#fields)
+* [Application Accessibility](#access)
 ___
 
 <a name="enterprise"></a>
@@ -302,4 +303,35 @@ When building an application, you often need to use a list of allowed values for
 You can create field values to restrict the values of a property to a list of allowed values.
 
 ___
+
+<a name="access"></a>
+## Application Accessibility (Unit 29)
+
+**Web Accessibility Initiative - Accessibile Rich Internet Applications (WAI-ARIA). Is a technical standard that defines ways to make web content and applications more accessible to people with disabilities**.
+
+This is done with **accessibility roles**. These are specific attributes applied to UI elements that enable communication between assistive devices and Pega applications. There are roles that direct a screen reader to differentiate between a checkbox and a button for example.
+
+Accessibility roles are provided to individual **access groups** and exist in the **PegaWAI** ruleset.
+
+There are a few functions that are in a standard ruleset in Pega, so don't require the PegaWAI ruleset. These include:
+
+* Setting tooltips to be read by a screen reader.
+* High contrast colour scheme.
+* Keyboard controls for tabbing through a UI.
+* Links with icons that can be described by a screen reader.
+* Provide a list of drop down options that can be read by a screen reader.
+
+The **Accessibility Inspector** tool in Pega can be used to identify and correct accessibility issues. There are two main features that aid accessibility design:
+
+* **Disability Preview** allows you to view your application through each variation of colourblindness.
+
+* You can audit your application UI to identify configurations that may negatively impact accessibility. The four categories that can be assessed are:
+
+* **Content** - an icon or tooltip is missing for example.
+
+* **Structural** - The heading heirarchy is out of order for example, confusing screen readers.
+
+* **Interactivity** - Options are not configured to allow a user to press a key to navigate content for example.
+
+* **Compatibility** - Deprecated layouts (tab layout) is used instead of a layout group for example.
 

@@ -14,6 +14,7 @@
 * [Decision Tables and Trees](#decision)
 * [Case Approval](#approve)
 * [Organizational Records](#organize)
+* [Configuring Field Values](#fields)
 ___
 
 <a name="enterprise"></a>
@@ -288,6 +289,17 @@ The Pega organizational structure is a three-level hierarchy. The top level is k
 A unit can have **child units**. For exmaple, two units (Hardware and Software) may report to a parent unit (Internal) in the IT division.
 
 An operator is associated with a unit, division, and organization. The operator ID record (also an organization rule) stores the organizational structure of the operator. You can update the organization structure, if necessary.
+
+___
+
+<a name="fields"></a>
+## Configuring Field Values (Unit 25)
+
+When building an application, you often need to use a list of allowed values for a specific property. If the list of allowed values is large, expected to change frequently, or may be specific for each case type, you can use a **field value**.
+
+**Field values** enable you to manage the list of allowed values separately from the property. Managing the allowed values separately from the property enables you to reuse a single property, and customize the allowed values based on the context of the property.
+
+You can create field values to restrict the values of a property to a list of allowed values.
 
 ___
 

@@ -335,3 +335,5 @@ The **Accessibility Inspector** tool in Pega can be used to identify and correct
 
 * **Compatibility** - Deprecated layouts (tab layout) is used instead of a layout group for example.
 
+___
+

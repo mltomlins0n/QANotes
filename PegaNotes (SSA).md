@@ -17,6 +17,8 @@
 * [Configuring Field Values](#fields)
 * [Application Accessibility](#access)
 * [Localization](#localize)
+* [Keyed Data Pages](#keyed)
+  * [Data Access Patterns](#accessPattern)
 ___
 
 <a name="enterprise"></a>
@@ -352,6 +354,30 @@ Text used in paragraphs, correspondence, and correspondence fragment rules are p
 ### Desigining for Localization
 
 To ensure you design your application for localization you create **field value** rules for capturing labels and notes, **paragraph** rules for instructions and messages, and **correspondence** rules for emails and other correspondence. Once these elements have been added to your application, they can be localized for virtually any language.
+
+___
+
+<a name="keyed"></a>
+## Keyed Data Pages (Unit 33)
+
+A Keyed Data Page is a page that references another data page. This allwos an application to retrieve data more efficiently by reducing the number of server requests, for example. You can use a keyed data page to load product information to a data page on the first query of the day. When a user submits a request in an online store, the data is returned from the **preloaded** (keyed) data page instead of making a fresh server request.
+
+When using **non-keyed** data access, a trip to the data source is required for each unique query.
+
+When using **keyed** data access, data is preloaded in memory and results can be immediately displayed.
+
+Keyed data pages are best used when many server requests are made while data in the server remains unchanged.
+
+<a name="accessPattern"></a>
+### Data Access Patterns
+
+Data access patterns provide simple ways to manage data in a Pega application. There are three patterns, and the choice of pattern impacts the storage and refreshing of data in a case.
+
+* **System of Record** - provides access to data stored in another system or application. The application always references the system of record, so the data is always correct.
+
+* **Snapshot** - copies data into a case. The application always references the copied data, so it is only current as of when it was copied.
+
+* **Reference** - allows an application to use data without adding it to the data model of the application itself. Often used to populate UI controls such as dropdown lists.
 
 ___
 

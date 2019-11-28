@@ -16,6 +16,7 @@
 * [Organizational Records](#organize)
 * [Configuring Field Values](#fields)
 * [Application Accessibility](#access)
+* [Localization](#localize)
 ___
 
 <a name="enterprise"></a>
@@ -334,6 +335,23 @@ The **Accessibility Inspector** tool in Pega can be used to identify and correct
 * **Interactivity** - Options are not configured to allow a user to press a key to navigate content for example.
 
 * **Compatibility** - Deprecated layouts (tab layout) is used instead of a layout group for example.
+
+___
+
+<a name="localize"></a>
+## Localization (Unit 31)
+
+The five ways to adapt to regions using localization are to accommodate the local language, currency, date format, time zone, and time format.
+
+You define **Field Value** rules for those rule types that use labels or other text strings under 64 characters. For example, a property reference in a section can use a field value as the label text. Applications translated into other languages have a field value with the translation for each UI form property.
+
+Paragraph rules make content reusable. Instructions on a UI form, copyright declarations, and privacy notifications are all examples of reusable paragraph rules. Paragraphs longer than 64 characters can be kept intact as boilerplate content and easily applied multiple times in an application. For example, the instructions at the top of a form can be translated into Spanish and can now be reused in several places in the application.
+
+Text used in paragraphs, correspondence, and correspondence fragment rules are packaged and output in a pair of HTML files, **Base.html** and **Translation.html**. Both files contain the same text until the **translator** puts the translated text into the **Translation.html** file.
+
+### Desigining for Localization
+
+To ensure you design your application for localization you create **field value** rules for capturing labels and notes, **paragraph** rules for instructions and messages, and **correspondence** rules for emails and other correspondence. Once these elements have been added to your application, they can be localized for virtually any language.
 
 ___
 

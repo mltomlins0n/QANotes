@@ -19,6 +19,7 @@
 * [Localization](#localize)
 * [Keyed Data Pages](#keyed)
   * [Data Access Patterns](#accessPattern)
+* [Database Updates](#database)
 ___
 
 <a name="enterprise"></a>
@@ -378,6 +379,19 @@ Data access patterns provide simple ways to manage data in a Pega application. T
 * **Snapshot** - copies data into a case. The application always references the copied data, so it is only current as of when it was copied.
 
 * **Reference** - allows an application to use data without adding it to the data model of the application itself. Often used to populate UI controls such as dropdown lists.
+
+___
+
+<a name="database"></a>
+## Database Updates (Unit 35)
+
+There are three main databases that Pega works with:
+
+* **PegaRULES** - contains all of the rules and system info for a Pega application.
+
+* **PegaDATA** - contains info such as cases, assignments, and case history.
+
+* **External Databases** - creating an **external class** allows you to manage the data read from and written to an external database.
 
 ___
 

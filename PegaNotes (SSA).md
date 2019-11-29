@@ -20,6 +20,7 @@
 * [Keyed Data Pages](#keyed)
   * [Data Access Patterns](#accessPattern)
 * [Database Updates](#database)
+* [Data Integration](#integrate)
 ___
 
 <a name="enterprise"></a>
@@ -392,6 +393,35 @@ There are three main databases that Pega works with:
 * **PegaDATA** - contains info such as cases, assignments, and case history.
 
 * **External Databases** - creating an **external class** allows you to manage the data read from and written to an external database.
+
+___
+
+<a name="integrate"></a>
+## Data Integration (Unit 37)
+
+Pega integrates with external systems using **connectors**. You can parse, convert, and map data in either direction to or from the clipboard with a connector. 
+
+You can invoke Connectors from data pages and activities. Use data pages to read or pull data from the external system. Use activities to write or push data to the external system.
+
+The invocation of a connector involves five components:
+
+* Data page or activity – Specifies the connector to use and data transforms for request and response mapping.
+
+* Data transforms – Maps the data structure of your application to the integration clipboard pages, which correspond to the format expected by the service.
+
+* Connector rule – Uses the integration clipboard pages to build the request according to the protocol and service definition, invokes the service, and parses and places the response on the integration clipboard pages.
+
+* Mapping rules – For most connectors, mapping rules are used to build outgoing and parsing incoming messages.
+
+* External system – Exposes the service called
+
+Pega provides connectors for a wide range of industry-standard protocols and standards. Standard connectors include SOAP, REST, SAP, EJB, JMS, MQ, File, and CMIS.
+
+When an external system requests data from a Pega application, Pega can provide it using **services**. Services allow you to expose the data and functionality of your application to external systems.
+
+You can parse, convert, and map data in either direction to or from the clipboard, much like with connectors.
+
+Pega provides services for a wide range of industry-standard protocols and standards, including SOAP, REST, EJB, JMS, MQ, and File.
 
 ___
 

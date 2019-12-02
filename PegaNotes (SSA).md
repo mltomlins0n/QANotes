@@ -22,6 +22,7 @@
 * [Database Updates](#database)
 * [Data Integration](#integrate)
 * [Simulating Integration Data](#simulate)
+* [Mobile Apps for Pega Applications](#mobile)
 ___
 
 <a name="enterprise"></a>
@@ -432,6 +433,29 @@ ___
 Pega provides the ability to simulate integrations with services for testing purposes or when the data source is unavailable. You simulate an integration to unit test the **integration connector**.
 
 **It is useful to simulate an integration when the service is not available or when the response needs to be dictated**.
+
+___
+
+<a name="mobile"></a>
+## Mobile Apps for Pega Applications (Unit 61)
+
+There are three prerequesites to deploying a mobile app using Pega:
+
+* Uploading a certificate set for the appropriate platform (iOS, Android).
+* Configuring access to the **Pega Mobile Build Server**.
+* Confirming with the system admin that Pega is configured to support HTTPS.
+
+The mobile UI is created on the **Channels and Interfaces** tab in App Studio.
+
+The three main groups of tasks that are done when configuring an app are known as **Option Groups**:
+
+* **Pega Mobile Client general options** - apply to any app built with the mobile channel, such as security and offline access.
+
+* **OS-Specific build options** - impact how an app for a specific platform is built. Includes how debugging is configured.
+
+* **App branding options** - control the look and feel of a mobile app.
+
+**It is best practice to always use data pages as a data source. When offline, data pages store all completed work. These can be synced to the application server when the mobile device is online**.
 
 ___
 

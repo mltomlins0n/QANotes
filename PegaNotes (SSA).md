@@ -21,6 +21,7 @@
   * [Data Access Patterns](#accessPattern)
 * [Database Updates](#database)
 * [Data Integration](#integrate)
+* [Simulating Integration Data](#simulate)
 ___
 
 <a name="enterprise"></a>
@@ -422,6 +423,15 @@ When an external system requests data from a Pega application, Pega can provide 
 You can parse, convert, and map data in either direction to or from the clipboard, much like with connectors.
 
 Pega provides services for a wide range of industry-standard protocols and standards, including SOAP, REST, EJB, JMS, MQ, and File.
+
+___
+
+<a name="simulate"></a>
+## Simulating Integration Data (Unit 39)
+
+Pega provides the ability to simulate integrations with services for testing purposes or when the data source is unavailable. You simulate an integration to unit test the **integration connector**.
+
+**It is useful to simulate an integration when the service is not available or when the response needs to be dictated**.
 
 ___
 

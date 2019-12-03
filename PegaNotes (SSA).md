@@ -23,6 +23,7 @@
 * [Data Integration](#integrate)
 * [Simulating Integration Data](#simulate)
 * [Mobile Apps for Pega Applications](#mobile)
+  * [Offline Processing for Mobile Apps](#offline)
 * [Debugging and Performance](#debug)
 ___
 
@@ -457,6 +458,36 @@ The three main groups of tasks that are done when configuring an app are known a
 * **App branding options** - control the look and feel of a mobile app.
 
 **It is best practice to always use data pages as a data source. When offline, data pages store all completed work. These can be synced to the application server when the mobile device is online**.
+
+<a name="offline"></a>
+### Offline Processing for Mobile Apps (Unit 63)
+
+**Offline-enabled mobile apps allow for users to create cases and work on assignments while their devices are offline**.
+
+Any offline work completed is saved to a queue. When the device is back online, data synchronization is triggered and the work uploaded to the server.
+
+To enable offline functionality for a mobile app, two major tasks must be performed:
+
+* Enable offline support for users by configuring the appropriate access groups.
+* Enable the appropriate case types for offline processing.
+
+**Before enabling a case type for offline use, it must be initialized with the default *pyStartCase* starting flow**.
+
+Two key considerations when configuring a mobile app for offline use are:
+
+* Considering which essential elements should be available offline.
+* How to ensure that synch is fast and efficient.
+
+A mobile app can access rules on the server only when it is online. Users need to access these mobile app rules to complete assignments. Data synchronization between the mobile app and Pega application supports rules access. You use whitelists and blacklists to identify and manage the rules specific to the mobile app.
+
+* **Whitelist** - rules are synched between app and server.
+* **Blackllist** - rules are not synched between app and server.
+
+By default, a mobile app performs a full synchronization when users log in for the first time, and when an application developer forces a manual sync to push changes to mobile users. A full sync forces the mobile app to overwrite an entire rule or data record.
+
+After an offline device comes back online, the mobile app performs a **delta synchronization**, or delta sync, with the server. A delta sync incrementally exchanges smaller amounts of data to reflect user activity, such as performing assignments or creating cases. Delta syncs improve the performance of the mobile app by reducing the data exchanged between the mobile app and the server.
+
+Excluding large amounts of data that change infrequently can improve performance further on a delta synch.
 
 ___
 

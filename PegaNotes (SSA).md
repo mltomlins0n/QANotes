@@ -440,6 +440,29 @@ Pega provides the ability to simulate integrations with services for testing pur
 
 ___
 
+<a name="debug"></a>
+## Debugging and Performance (Unit 55)
+
+Regular monitoring of log files during development and production helps ensure your application is operating properly. The **PegaRULES Log Analyzer (PLA)** is a standalone web application that developers and system administrators can use to view summaries of console logs.
+
+Use the PLA to test new or reconfigured Pega applications during user acceptance testing (UAT), performance and stress testing, and immediately after deployment into a production environment. Testing reconfigured applications during UAT, during performance testing, and right after deployment is important because performance, stability, and scaling issues are most likely to occur during these times.
+
+* The **Alert log** monitors performance issues such as events that exceed performance thresholds or failures.
+
+* The **Pega log** monitors system stability, gathering system errors, exceptions, debug statements and other messages.
+
+* The **JVM garbage collection log** displays memory usage.
+
+To view events such as those that occur when a case processes, you use the **Tracer**. In Pega, the Tracer allows you to capture and view the events that occur during case processing. Unlike the Clipboard tool, which presents the current value of properties in memory, the Tracer presents a complete log of the events that occur during case processing. This allows you to identify the cause of execution errors, such as Java exceptions or incorrect property values.
+
+Pega **Predictive Diagnostic Cloud (PDC)** is a Software as a Service (SaaS) tool that runs on Pega Cloud® and actively gathers, monitors, and analyzes real-time performance and health indicators from all active Pega Platform™ applications. PDC gathers, aggregates, and analyzes alerts, system health pulses, and guardrail violations generated from Pega applications to produce trending dashboards.
+
+PDC allows you to monitor several on-premise and cloud-based Pega applications. Systems running on Pega Cloud are already integrated with PDC. Pega applications send data to PDC, PDC does not request data from Pega applications. Asynchronous communication ensures a small performance impact on the monitored Pega system.
+
+A system **Key Performance Indicator (KPI)** is a measured value recorded by an alert. If the recorded value is higher than the KPI threshold configured in Pega Platform, the alert is triggered. Each alert maps to an action item type in PDC. When you elevate a KPI on an action item, all alerts with a lower KPI are ignored. Alerts with an equal or higher KPI are processed and assigned to an action item type. You can elevate the KPI on an action item in PDC.
+
+___
+
 <a name="mobile"></a>
 ## Mobile Apps for Pega Applications (Unit 61)
 
@@ -492,27 +515,3 @@ After an offline device comes back online, the mobile app performs a **delta syn
 Excluding large amounts of data that change infrequently can improve performance further on a delta synch.
 
 ___
-
-<a name="debug"></a>
-## Debugging and Performance (Unit 55)
-
-Regular monitoring of log files during development and production helps ensure your application is operating properly. The **PegaRULES Log Analyzer (PLA)** is a standalone web application that developers and system administrators can use to view summaries of console logs.
-
-Use the PLA to test new or reconfigured Pega applications during user acceptance testing (UAT), performance and stress testing, and immediately after deployment into a production environment. Testing reconfigured applications during UAT, during performance testing, and right after deployment is important because performance, stability, and scaling issues are most likely to occur during these times.
-
-* The **Alert log** monitors performance issues such as events that exceed performance thresholds or failures.
-
-* The **Pega log** monitors system stability, gathering system errors, exceptions, debug statements and other messages.
-
-* The **JVM garbage collection log** displays memory usage.
-
-To view events such as those that occur when a case processes, you use the **Tracer**. In Pega, the Tracer allows you to capture and view the events that occur during case processing. Unlike the Clipboard tool, which presents the current value of properties in memory, the Tracer presents a complete log of the events that occur during case processing. This allows you to identify the cause of execution errors, such as Java exceptions or incorrect property values.
-
-Pega **Predictive Diagnostic Cloud (PDC)** is a Software as a Service (SaaS) tool that runs on Pega Cloud® and actively gathers, monitors, and analyzes real-time performance and health indicators from all active Pega Platform™ applications. PDC gathers, aggregates, and analyzes alerts, system health pulses, and guardrail violations generated from Pega applications to produce trending dashboards.
-
-PDC allows you to monitor several on-premise and cloud-based Pega applications. Systems running on Pega Cloud are already integrated with PDC. Pega applications send data to PDC, PDC does not request data from Pega applications. Asynchronous communication ensures a small performance impact on the monitored Pega system.
-
-A system **Key Performance Indicator (KPI)** is a measured value recorded by an alert. If the recorded value is higher than the KPI threshold configured in Pega Platform, the alert is triggered. Each alert maps to an action item type in PDC. When you elevate a KPI on an action item, all alerts with a lower KPI are ignored. Alerts with an equal or higher KPI are processed and assigned to an action item type. You can elevate the KPI on an action item in PDC.
-
-___
-

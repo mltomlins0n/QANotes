@@ -286,7 +286,7 @@ The application evaluates the decision table. Each satisfied row or condition ad
 ___
 
 <a name="organize"></a>
-Organizational Records (Unit 23)
+## Organizational Records (Unit 23)
 
 **A Pega application uses an organizational structure to direct assignments to the right operator or work queues, determine the access rights of operators, and report on activity in various company departments**.
 

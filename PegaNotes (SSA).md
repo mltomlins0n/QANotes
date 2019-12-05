@@ -122,6 +122,8 @@ A **branch** in Pega is a container for rulesets with records that are undergoin
 
 Branches are usually created for each team and allow development to occur without impacting other teams' work.
 
+___
+
 <a name="circumstance"></a>
 ## Circumstancing (Unit 11)
 

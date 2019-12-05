@@ -22,9 +22,9 @@
 * [Database Updates](#database)
 * [Data Integration](#integrate)
 * [Simulating Integration Data](#simulate)
+* [Debugging and Performance](#debug)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
-* [Debugging and Performance](#debug)
 ___
 
 <a name="enterprise"></a>

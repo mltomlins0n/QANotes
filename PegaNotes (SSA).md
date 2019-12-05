@@ -135,7 +135,7 @@ App rules are set to **AV** mode to reduce the difference between design and run
 
 Org rules are set to **RV** mode to ensure strict validation on prerequisite rulsets when migrated.
 
-Rules in **AV** mode can reference all rules in the same application, and any rules defined in a built-on application.
+Rules in **AV** mode can reference all rules in the same application, and any rules in a built-on application can reference those in the application on which they are based. AV rules in an app **cannot** reference rules in an app that is built on top.
 
 Rules in **RV** mode depend on prerequisite rulests. Only rules that are specified as prerequisites (and their prerequisites) can be referenced.
 

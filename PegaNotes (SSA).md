@@ -5,6 +5,7 @@
 * [Enterprise Class Structure](#enterprise)
   * [Enterprise Class Structure Layers](#layers)
 * [Application Versioning](#version)
+* [Application Rulesets](#rulesets)
 * [Managing Application Development](#dev)
 * [Circumstancing](#circumstance)
 * [Duplicate and Temporary Cases](#cases)
@@ -112,6 +113,53 @@ After performing a skimming update, you must update:
 * Application rules
 * The required rulsesets and versions array in RuleSet version rules
 * Access groups, to reference the new major version
+
+___
+
+<a name="rulesets"></a>
+## Application Rulesets
+
+Every type of rule belongs to a **ruleset**, which is a container used to identify, store, and manage a set of rules.
+
+When a new application is generated, four rulesets are created, two for the application itself, and two organizational rulesets. For example, the application rulsets contain configuration rules, and the organizational rulesets contain reusable assets such as data structures.
+
+**Production rulesets** have at least one unlocked ruleset version in the production environment. Production rulesets include rules that are updated in the production environment. The most common use of production rulesets is for delegated rules. However, production rulesets can be used for any use case requiring rules to be updated in a production environment.
+
+Ruleset validation is performed every time a rule is saved. It guarantees that referenced rules are available on the target system when the ruleset is promoted.
+
+Ruleset validation does not affect rule resolution at run time but is applied only at design time.
+
+The two options for this are **Application Validation (AV)** and **Ruleset Validation (RV)**.
+
+App rules are set to **AV** mode to reduce the difference between design and runtime.
+
+Org rules are set to **RV** mode to ensure strict validation on prerequisite rulsets when migrated.
+
+Rules in **AV** mode can reference all rules in the same application, and any rules defined in a built-on application.
+
+Rules in **RV** mode depend on prerequisite rulests. Only rules that are specified as prerequisites (and their prerequisites) can be referenced.
+
+**Rules without prerequisite rulesets must reference the base product *Pega-ProcessCommander* as a prerequisite. There is a 99 patch version of this ruleset, and using it avoids having to update the ruleset after product updates**.
+
+AV and RV rules can be mixed. Rulesets with another ruleset in square brackets are RV, with the bracketed ruleset being the prerequisite. E.g. MyCoPL [MyCo].
+
+Rulesets without another bracketed ruleset are AV.
+
+**RV rulesets cannot call AV rulesets that are not prerequisties**.
+
+### Ruleset Best Practices
+
+* Only use RV for rulesets that are designed to be used across multiple applications, such as organizational rulesets, to make them easily portable and prevent the introduction of dependencies on a specific application.
+
+* Create applications for common rulesets; use the built-on functionality to include common rulesets in the application.
+
+* Include unlocked AV rulesets in one application only. Doing so prevents AV rulesets from referring to rules that may not exist in applications that do not contain the ruleset.
+
+* Run the Validation tool after implementation of critical changes or milestones (for example, changes to the application ruleset list or built-on application as well as changes made before lock/export).
+
+### Ruleset List
+
+Rule execution at runtime is governed by the **Ruleset List, or Ruleset Stack**. Ruleset higher up the list have higher priority.
 
 ___
 

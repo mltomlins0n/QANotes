@@ -17,6 +17,7 @@
 * [Case Approval](#approve)
 * [Organizational Records](#organize)
 * [Configuring Field Values](#fields)
+* [User Portals](#portal)
 * [Application Accessibility](#access)
 * [Localization](#localize)
 * [Keyed Data Pages](#keyed)
@@ -405,6 +406,36 @@ When building an application, you often need to use a list of allowed values for
 **Field values** enable you to manage the list of allowed values separately from the property. Managing the allowed values separately from the property enables you to reuse a single property, and customize the allowed values based on the context of the property.
 
 You can create field values to restrict the values of a property to a list of allowed values.
+
+<a name="portal"></a>
+## User Portals
+
+A **user portal** is a user's view into the application. Pega provides a few default portals, customized to the needs of a specific user. For example, case workers or case managers.
+
+A **Harness* is used to structure the UI of a portal. There are four commonly used harnesses in Pega:
+
+* **New** - for creating new cases.
+* **Perform** - enables users to select a flow action to perform in order to complete an assignment.
+* **Review** - presents an assignment in read-only mode.
+* **Confirm** - presents a read-only comfirmation of a completed assignment if the next assignment is not performed by the user.
+
+Harnesses allowing users to select a flow acction contain an **action area**. When a user selects a flow action to perform, Pega displays the contents of that flow action in the action area.
+
+Harnesses that organize a user portal contain a **screen layout**. A screen layout organizes the elements of the browser window into a main content pane and smaller surrounding panes.
+
+The default user portals can be customized, and custom portals can be created from scratch.
+
+In Pega, a portal is represented with a **portal rule**. A portal rule identifies the type of user expected to use the portal, the harness used to organize the portal contents and the skin that defines the branding applied to the portal.
+
+To configure a Pega portal you:
+
+* Identify the intended user role and portal type.
+* Organize the layout of the portal.
+* Customize the branding of the portal.
+* Customize the content and tools available to users.
+* Configure an access group to reference the portal if necessary.
+
+Pega supports two portal types: **composite** and **custom**. Composite portals are defined by harnesses and sections. Composite portals are cross-browser compatible and support Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, and Google Chrome browsers. Custom portals are defined by an activity. As a best practice, configure a new portal as a composite portal.
 
 ___
 

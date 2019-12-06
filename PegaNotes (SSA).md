@@ -412,7 +412,7 @@ You can create field values to restrict the values of a property to a list of al
 
 A **user portal** is a user's view into the application. Pega provides a few default portals, customized to the needs of a specific user. For example, case workers or case managers.
 
-A **Harness* is used to structure the UI of a portal. There are four commonly used harnesses in Pega:
+A **Harness** is used to structure the UI of a portal. There are four commonly used harnesses in Pega:
 
 * **New** - for creating new cases.
 * **Perform** - enables users to select a flow action to perform in order to complete an assignment.

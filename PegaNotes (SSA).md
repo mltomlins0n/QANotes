@@ -7,6 +7,7 @@
 * [Application Versioning](#version)
 * [Application Rulesets](#rulesets)
 * [Managing Application Development](#dev)
+* [Rule Resolution](#rule)
 * [Circumstancing](#circumstance)
 * [Duplicate and Temporary Cases](#cases)
 * [Parallel Processing](#parallel)
@@ -169,6 +170,50 @@ ___
 A **branch** in Pega is a container for rulesets with records that are undergoing rapid changes. Rulesets associated with a branch are called **branch rulesets**.
 
 Branches are usually created for each team and allow development to occur without impacting other teams' work.
+
+___
+
+<a name="rule"></a>
+## Rule Resolution
+
+Rule resolution is a search algorithm used to find the most appropriate instance of a rule to execute in any situation.
+
+Rule resolution applies to most rules that belong to the **Rule** base class, such as:
+
+* Case types - **Rule-Obj-CaseType**
+* Properties - **Rule-Obj-Property**
+* UI rules - **Rule-HTML-Section**
+* Declare expressions - **Rule-Declare-Expression**
+* Data Pages - **Rule-Declare-Pages**
+
+When a rule is referenced in a Pega application, rule resolution attempts to locate instances of the rule in the rules cache. If instances of the referenced rule are found, rule resolution finds the best instance of the rule and checks for duplicates. Then Pega confirms the rule is available for use. Finally, Pega verifies the user is authorized to use the rule.
+
+If instances of the rule are not found in the rules cache, Pega runs a special sub-process to populate the rules cache.
+
+The point of the rule resolution is to return the most appropriate rule to satisfy the need of a specific user for a specific purpose.
+
+When your application references a rule, Pega checks the rules cache for the referenced rule. If the referenced rule is not available in the rules cache, Pega uses a multiple-step process to populate the rules cache.
+
+The rule resolution algorithm: 
+
+* Creates a list of all rules that match the query to populate the cache.
+* Rules marked as **Not Available** are removed.
+* Uses the operator's **Ruleset list** to determine which rules the operator can access.
+* Removes all rules not defined in a class in the ancestor tree.
+* Ranks the remaining rules.
+* Adds these rules to the cache.
+
+Rules that are subject to the rule resolution process have an Availability setting. The current Availability of a rule is visible on the rule form next to the rule name or description.
+
+The Availability setting is used to determine if a rule is available for use during rule resolution. The availability of a rule is also used to determine if you can view, copy, or edit a rule in Dev Studio.
+
+The availability of a rule can be set to one of five values:
+
+* **Available** - rule can be used in the rule resolution process. This is the default setting when a rule is created. By default, a rule can beviewed, copied, edited, and executed in Dev Studio.
+* **Final** - rule can be used in rule resolution, but cannot be edited or copied into another ruleset.
+* **Not Available** - cannot be used in rule resolution. Can not be executed.
+* **Blocked** - rule can be used in rule resolution, but will not execute. If selected in rule resolution, the process is halted and returns an error.
+* **Withdrawn** - rules that are in the same ruleset with a <= version number, the same purpose, and *Apply to:* class are hidden and not considered in rule resolution. These rules do not execute.
 
 ___
 

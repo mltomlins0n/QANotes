@@ -25,6 +25,7 @@
 * [Database Updates](#database)
 * [Data Integration](#integrate)
 * [Simulating Integration Data](#simulate)
+* [Integration Setting Management](#integrateSetting)
 * [Debugging and Performance](#debug)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
@@ -561,6 +562,17 @@ ___
 Pega provides the ability to simulate integrations with services for testing purposes or when the data source is unavailable. You simulate an integration to unit test the **integration connector**.
 
 **It is useful to simulate an integration when the service is not available or when the response needs to be dictated**.
+
+___
+
+<a name="integrateSetting"></a>
+## Integration Setting Management
+
+Before an application is live, it moves through many environments. Typically, applications go through development, staging, QA, and production. When migrating an application from one server or environment to another, references to the external systems connected to the application (such as endpoint URLs and JNDI servers) typically change. The information required to connect to these external systems must be modified, depending on your environment.
+
+Using the **Global Resource Settings** pattern to reference external systems ensures that you do not miss changing a setting when moving from staging to production. 
+
+In this pattern, you create a class that contains the configuration settings for an integration that has values able to change from one environment to the next. You then have your resources access a data page to load those settings. This data page allows you to have a place to maintain and update these settings.
 
 ___
 

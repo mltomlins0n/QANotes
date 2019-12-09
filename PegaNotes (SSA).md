@@ -26,6 +26,7 @@
 * [Data Integration](#integrate)
 * [Simulating Integration Data](#simulate)
 * [Integration Setting Management](#integrateSetting)
+* [Integration Errors](#integrationError)
 * [Debugging and Performance](#debug)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
@@ -573,6 +574,35 @@ Before an application is live, it moves through many environments. Typically, ap
 Using the **Global Resource Settings** pattern to reference external systems ensures that you do not miss changing a setting when moving from staging to production. 
 
 In this pattern, you create a class that contains the configuration settings for an integration that has values able to change from one environment to the next. You then have your resources access a data page to load those settings. This data page allows you to have a place to maintain and update these settings.
+
+___
+
+<a name="integrationError"></a>
+## Integration Errors
+
+Two types of errors can occur when trying to integrate to an external system using a connector:
+
+* **Transient** - don't last long and typically fix themselves. For example, the connector is unable to connect because the application is being restarted and is temporarily unavailable.
+
+* **Permanent** - typically due to a configuration error, or an error in the remote application logic. For example, an invalid SOAP request is sent.
+
+**It is best practice to include error handling for all connectors**.
+
+For transient errors, post a note to alert the end user that the integration failed. Ask the user to retry at a later time. Alternatively, if the response is not immediately needed, the connection can be automatically retried.
+
+For permanent errors, write the details to a log file so that errors can be investigated and fixed. In addition, you might want to implement a process for the investigation and fixing.
+
+The way errors are detected depends on how the connector is invoked. Connectors can be invoked by data pages or activities. When data pages and activities invoke a connector, the best practices are to:
+
+* Add error detection to all data pages and activities
+
+* Invoke a reusable data transform to handle errors
+
+Pega provides a template data transform called **pxErrorHandlingTemplate**. This can be used to create a reusable error handling data transform. The error handler data transform can be used with both data pages and activities.
+
+In addition, each connector has an error handling flow (called **Connection Problem**). Pega automatically invokes the error handler flow if the error is not detected by another mechanism.
+
+**To configure error detection for a date page, create a new data transform for error handling. It should be created from the standard *pxErrorHandlingTemplate* data transform**.
 
 ___
 

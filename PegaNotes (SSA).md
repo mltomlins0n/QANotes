@@ -28,6 +28,7 @@
 * [Integration Setting Management](#integrateSetting)
 * [Integration Errors](#integrationError)
 * [Web Services](#web)
+* [Desigining Reports with Multiple Sources](#reports)
 * [Debugging and Performance](#debug)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
@@ -627,6 +628,62 @@ A combination of rules are used to make a SOAP service request:
 * **XML Stream** - assembles and sends an XML doc in an email, a SOAP message, a file, or other types of messages.
 
 * **Service Package** - groups one or more sservice rules that are designed to be developed, tested, and deployed together.
+
+___
+
+<a name="reports"></a>
+## Designing Reports with Multiple Sources
+
+**Any Pega class can be mapped to a database table**.
+
+Reports use **class mappings** to locate data from one or more tables.
+
+Pega uses two records to identify the database table that a class is mapped to:
+
+* **Database** - identifies how Pega connects to a specific database. Contains connection information so Pega can access the database.
+
+* **Database Table** - identifies a specific table in a specific database, and specifies the corresponding Pega class. Pega uses this record to identify which table to write case data when a user creates or updates a case.
+
+To have multiple classes store data in the same table, you designate a class as a **class group** (or **work pool**). Class groups cause the system to store instances of similar or related case types together in a single database table. If you create a report in a specific case type such as Candidate, your report returns only records in the case type. If you create a report in the class group, the report returns all instances in the classes that belong to the class group.
+
+You commonly generate three types of reports: work, assignment, and history. Each type of report uses properties in classes mapped to a variety of data tables.
+
+### Work
+
+When a case is created, PEga uses standard properties in the *Work-base* class to define each case. These are:
+
+* A case identifier *pyID*, the work parties involved *pyWorkParty*.
+* A customer identifier such as an account no. *pyCustomer*.
+* The work status of the case *pyStatusWork*.
+
+### Assignment
+
+Cases requiring user interaction are assigned to a user during processing. Each time a case is assigned, Pega creates an assignment object. When the case is completed and advances to the next assignment, Pega creates another object. If the assignment is routed to an operator, Pega saves the object to the database table named **pc_assign_worklist**. If the assignment is routed to a workbasket, Pega saves the object in a database table named **pc_assign_workbasket**.
+
+### History
+
+When a case is being processed, the system automatically captures audit trail data in the history classes. The classes are mapped to the History database tables where the data is saved. For example, the history class **History-TGB-HRApps-Work** is mapped to **pc_History-TGB-HRApps-Work**.
+
+History reports use properties in the **History-** and **History-Work-** classes. These properties include **pyHistory type** (identifies the event that caused the history event), and **pyPerformer** (identifies the operator who completed the event recorded in the history instance).
+
+Properties in history classes can be used to design performance-based reports. For example, you can use **pxTaskElapsedTime** to report the total time spent on an assignment. If an assignment is routed to multiple users, you can use **pyPerformTaskTime** to report on the total time spent by all users. If **pyPerformTaskTime** is significantly lower than **pxTaskElapsedTime**, then the assignment has been idle for a long time.
+
+When you build a class relationship in a report, you configure a **class join**.
+
+To do so:
+
+* Determine the class to which you are joining.
+* Create a prefix that in combination with the class name, serves as an alias for the joined class.
+* Decide whether you want to include or exclude instances that do not match.
+* Create a filter that describes how you relate the classes.
+
+**Association rules** also join multiple classes, but unlike class joins, can be resused across reports. Pega provides standard association rules that can be used to join many classes.
+
+**Subreports** enable you to reference results from any report definition in a main report. They can be defined in classes different from the main report. You can access data in different classes in a similar way that class joins or associations do.
+
+Subreports are typically used to satisfy complex reporting requirements. They can be used to filter results, for example. They can also be used to display aggregate calculations on specific rows in a main report.
+
+The two methods to create subreports are **join filters** and **aggregation**.
 
 ___
 

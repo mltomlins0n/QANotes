@@ -27,6 +27,7 @@
 * [Simulating Integration Data](#simulate)
 * [Integration Setting Management](#integrateSetting)
 * [Integration Errors](#integrationError)
+* [Web Services](#web)
 * [Debugging and Performance](#debug)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
@@ -603,6 +604,29 @@ Pega provides a template data transform called **pxErrorHandlingTemplate**. This
 In addition, each connector has an error handling flow (called **Connection Problem**). Pega automatically invokes the error handler flow if the error is not detected by another mechanism.
 
 **To configure error detection for a date page, create a new data transform for error handling. It should be created from the standard *pxErrorHandlingTemplate* data transform**.
+
+___
+
+<a name="web"></a>
+## Web Services
+
+**The two most common ways to expose your application as a service are either to create a web service or to leverage the Pega API**.
+
+These work the same way, a request is made to a URL and a response returned. The difference is how each method communicates with the service.
+
+The Pega API can call any service using the standard HTTP methods GET, POST, PUT etc.
+
+SOAP services need to be created in Pega, and use the SOAP protocol to pass XML messages from one application to another.
+
+A combination of rules are used to make a SOAP service request:
+
+* **Service Activity** - provides the processing for a service rule.
+
+* **XML Parser** - maps data from an XML message into clipboard property values.
+
+* **XML Stream** - assembles and sends an XML doc in an email, a SOAP message, a file, or other types of messages.
+
+* **Service Package** - groups one or more sservice rules that are designed to be developed, tested, and deployed together.
 
 ___
 

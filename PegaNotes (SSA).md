@@ -29,6 +29,7 @@
 * [Integration Errors](#integrationError)
 * [Web Services](#web)
 * [Desigining Reports with Multiple Sources](#reports)
+* [Application Security](#secure)
 * [Debugging and Performance](#debug)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
@@ -684,6 +685,48 @@ To do so:
 Subreports are typically used to satisfy complex reporting requirements. They can be used to filter results, for example. They can also be used to display aggregate calculations on specific rows in a main report.
 
 The two methods to create subreports are **join filters** and **aggregation**.
+
+___
+
+<a name="secure"></a>
+## Application Security
+
+**Access Control** is used in PEga to provide security.
+
+It is configured as either **role-based** or **attribute-based**, for more security.
+
+* Role based restricts access to specific instances classes or properties within instances independent of an access group role.
+
+* Role based restricts users' roles access to certain UI elements, to perform only certain actions in the UI, or to have any access to a class.
+
+Access control depends on two factors:
+
+* **Authentication** - confirms the identity of a user and verifies that the user has access to an application.
+
+* **Authorization** - determines what data the user can view and the action they can perform.
+
+A user can belong to multiple access groups, but only one is active at a single time.
+
+In Pega, you define an access role with an **Access Role Name** record, a label that describes a specific set of application users with a unique job function. You apply the role to **Access of Role to Object** and **Access Deny** records to identify the actions allowed or denied to users assigned the role.
+
+You create a **Privilege** record to control user access to a specific rule, such as a flow or a flow action. When you add a privilege to a rule, users can access the rule only if they are assigned a role that has been granted the privilege.
+
+**Attribute-based** access control allows you to control access to an object (case, report, property) by adding attribute values to objects, and configuring the access control policies. The access control policies determine whether specific users can access the objects. You can use one attribute to allow different actions in different objects. For example, you can assign the attribute Customer to a case to decide whether a user has permission to delete a case.
+
+You can use three data types to represent an attribute: a **single string value**, a **list of string values**, and a **numerical value**. Also, hierarchical attributes represent a specified order of values. You can use either string type properties or numerical data types to define hierarchical attributes.
+
+After configuring the attributes you configure the **Access Control Policy Condition** rule form, which defines a set of filters. Adding logic to these filters that combines the conditions means that users can do one of the actions defined in the access control policy if they meet the conditions.
+
+After configuring the conditions, you configure the **Access Control Policy* rule form. By choosing one of the following actions, you limit what the user is allowed to do when accessing an object.
+
+The options are:
+
+* Read
+* Update
+* Discover
+* Delete
+* PropertyRead
+* PropertyEncrypt
 
 ___
 

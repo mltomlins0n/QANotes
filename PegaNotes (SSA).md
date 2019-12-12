@@ -30,6 +30,7 @@
 * [Web Services](#web)
 * [Desigining Reports with Multiple Sources](#reports)
 * [Application Security](#secure)
+* [Web Mashup](#mashup)
 * [Debugging and Performance](#debug)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
@@ -727,6 +728,23 @@ The options are:
 * Delete
 * PropertyRead
 * PropertyEncrypt
+
+___
+
+<a name="mashup"></a>
+## Web Mashup
+
+**Pega Web Mashup enables you to embed a Pega application in another web application. You can create a mashup to display information about a case.**
+
+Common uses of a mashup are:
+
+* Opening a new case.
+* Displaying a user's worklist.
+* Selecting and performing an assignment.
+
+Anything that can be diaplyed in a harness is visible in a mashup.
+
+Mashups consist of HTML code. The mashup itself is in wither an `iframe` or `div` tag, and represents a **Pega Gadget**. This is the view provided by the mashup.
 
 ___
 

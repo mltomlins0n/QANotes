@@ -32,6 +32,7 @@
 * [Application Security](#secure)
 * [Web Mashups](#mashup)
 * [Activities](#activity)
+* [Background Processing](#background)
 * [Debugging and Performance](#debug)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
@@ -775,6 +776,24 @@ Activites can call other activities in two ways:
 * **Branch** Pega runs the specified activity but returns control to the **rule** that called the first activity. The original activity ends when the branched activity is complete. For example, if activity A branches to B, control returns to the rule that called A when B finishes.
 
 Activites can take parameters, which are stored on the **parameter** page on the clipboard, which is not visible in the clipboard tool. Use `param.<ParamName>` to reference a parameter.
+
+___
+
+<a name="background"></a>
+## Background Processing
+
+To configure a background task:
+
+* Specify an activity to perform.
+* Specify the class of an object either to queue or to schdule a job. This class must contain the activity that you want to run.
+* Identify the nodes in the server cluster. By default this is a **BackgroundProcessing** node.
+* Add an access group with access to your application to the **AsyncProcessor** requestor type. This allows Pega to identify and initialize a queue processor and job scheduler.
+
+Tasks run weith eh **Queue Processor** can be queued using either the *Run in Background* smart shape, or the *Queue-For-Proccessing* method in an activity.
+
+Tasks run using the queue processor can be run immediately or on a delay.
+
+The **Job Scheduler** shcedules a recurring task. This can run at a specified interval, and the scheduler identifies the task to process at that time.
 
 ___
 

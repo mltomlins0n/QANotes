@@ -30,7 +30,8 @@
 * [Web Services](#web)
 * [Desigining Reports with Multiple Sources](#reports)
 * [Application Security](#secure)
-* [Web Mashup](#mashup)
+* [Web Mashups](#mashup)
+* [Activities](#activity)
 * [Debugging and Performance](#debug)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
@@ -745,6 +746,35 @@ Common uses of a mashup are:
 Anything that can be diaplyed in a harness is visible in a mashup.
 
 Mashups consist of HTML code. The mashup itself is in wither an `iframe` or `div` tag, and represents a **Pega Gadget**. This is the view provided by the mashup.
+
+___
+
+<a name="activity"></a>
+## Activities
+
+Activities automate processing and are much like scripts. 
+
+Best practices are:
+
+* Keep activities short. Fewer than 25 steps.
+* Use alternative rule types, such as data transforms, whenever possible.
+* Limit hand-coded Java. Avoid Java steps in activities when standard methods are available.
+
+Each step in an activity must specify a **method** that describes the action the system takes.
+
+A **step page** is the page in memory on which the method is processed. For example, an activity called from a utility shape during case processing executes against the page assigned to the case type, *pyWorkPage*.
+
+By default, an activity executes within the context in which it is called. You can change the context by specifying a page in the **step page** field. If you do this, you must also reference that page in the **Pages and Classes** tab of the activity form.
+
+Entering `//` in the label field acts like a comment and skips execution for that step in the activity.
+
+Activites can call other activities in two ways:
+
+* **Call** - Pega runs the specified activity then returns control to the calling activity.
+
+* **Branch** Pega runs the specified activity but returns control to the **rule** that called the first activity. The original activity ends when the branched activity is complete. For example, if activity A branches to B, control returns to the rule that called A when B finishes.
+
+Activites can take parameters, which are stored on the **parameter** page on the clipboard, which is not visible in the clipboard tool. Use `param.<ParamName>` to reference a parameter.
 
 ___
 

@@ -34,6 +34,7 @@
 * [Activities](#activity)
 * [Background Processing](#background)
 * [Debugging and Performance](#debug)
+* [Relevant Records](#relevant)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
 ___
@@ -817,6 +818,34 @@ Pega **Predictive Diagnostic Cloud (PDC)** is a Software as a Service (SaaS) too
 PDC allows you to monitor several on-premise and cloud-based Pega applications. Systems running on Pega Cloud are already integrated with PDC. Pega applications send data to PDC, PDC does not request data from Pega applications. Asynchronous communication ensures a small performance impact on the monitored Pega system.
 
 A system **Key Performance Indicator (KPI)** is a measured value recorded by an alert. If the recorded value is higher than the KPI threshold configured in Pega Platform, the alert is triggered. Each alert maps to an action item type in PDC. When you elevate a KPI on an action item, all alerts with a lower KPI are ignored. Alerts with an equal or higher KPI are processed and assigned to an action item type. You can elevate the KPI on an action item in PDC.
+
+___
+
+<a name="relevant"></a>
+## Relevant Records
+
+Rules can be designated as **relevant records** to promote rule reuse. These rules can also be used in App Studio, with a more advanced configuration.
+
+Records created in the **Data Designer** or **Case Designer** are automatically marked as relevant.
+
+The following can be manually marked as relevant:
+
+* Properties
+* Sections
+* Harnesses
+* Paragraphs
+* Correspondence
+* Service Level Agreements
+* Flows
+* Flow Actions
+
+There are three ways to designate a record as relevant:
+
+* Creating the record in App Studio
+* Marking the record from within the record itself
+* Adding records from the **Relevant Records** tab the the **Application > Inventory** page.
+
+Marking a relevant record as **inactive** makes it unavailable in **App Studio**.
 
 ___
 

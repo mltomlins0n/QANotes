@@ -176,7 +176,7 @@ Rule execution at runtime is governed by the **Ruleset List, or Ruleset Stack**.
 ___
 
 <a name="dev"></a>
-## Managing Application Devlopment (Unit 7)
+## Managing Application Devlopment
 
 A **branch** in Pega is a container for rulesets with records that are undergoing rapid changes. Rulesets associated with a branch are called **branch rulesets**.
 
@@ -229,7 +229,7 @@ The availability of a rule can be set to one of five values:
 ___
 
 <a name="circumstance"></a>
-## Circumstancing (Unit 11)
+## Circumstancing
 
 **Circumstancing** is creating a variant of a rule to manage certain exceptions in otherwise normal processes. e.g. customers with "basic" membership receive responses after 24hours, but those with "elite" status receive a response after 6 hours. Instead of creating a separate rule for elite customers, you take advantage of **circumstancing**.
 
@@ -268,7 +268,7 @@ When selecting which rule to use, Pega looks to the newest ruleset version **reg
 ___
 
 <a name="cases"></a>
-## Duplicate and Temporary Cases (Unit 13)
+## Duplicate and Temporary Cases
 
 ### Duplicate Cases
 
@@ -291,7 +291,7 @@ Temporary cases are processed by a single operator and cannot be routed until th
 ___
 
 <a name="parallel"></a>
-## Parallel processing (Unit 15)
+## Parallel processing
 
 You use the **Split Join** shape to call multiple processes that operate in parallel then rejoin the main flow. **Join conditions** can be specified to determine when the main process can continue.
 
@@ -321,7 +321,7 @@ Cases are locked on **parent** cases, and cascade down to any child cases create
 ___
 
 <a name="flow"></a>
-## Flow Action Processing (Unit 17)
+## Flow Action Processing
 
 **In Pega, you can add pre- and post-processing actions to a flow action to manipulate data. These actions enable you to add related tasks to the flow action. For example, you can concatenate a person's first name and last name to create their full name**.
 
@@ -334,7 +334,7 @@ Consider the possibility of reuse when decising whether to use a pre-processing 
 ___
 
 <a name="decision"></a>
-## Decision Tables and Trees (Unit 19)
+## Decision Tables and Trees
 
 Decision tables are used when you need to test the values of multiple properties to make a decision.
 
@@ -373,7 +373,7 @@ Clicking **Show completeness** adds rows to indicate values that will not be eva
 ___
 
 <a name="approve"></a>
-## Case Approval (Unit 21)
+## Case Approval
 
 Cases can either be **single approval** or **cascading approval**.
 
@@ -390,7 +390,7 @@ The application evaluates the decision table. Each satisfied row or condition ad
 ___
 
 <a name="organize"></a>
-## Organizational Records (Unit 23)
+## Organizational Records
 
 **A Pega application uses an organizational structure to direct assignments to the right operator or work queues, determine the access rights of operators, and report on activity in various company departments**.
 
@@ -409,7 +409,7 @@ An operator is associated with a unit, division, and organization. The operator 
 ___
 
 <a name="fields"></a>
-## Configuring Field Values (Unit 25)
+## Configuring Field Values
 
 When building an application, you often need to use a list of allowed values for a specific property. If the list of allowed values is large, expected to change frequently, or may be specific for each case type, you can use a **field value**.
 
@@ -450,7 +450,7 @@ Pega supports two portal types: **composite** and **custom**. Composite portals 
 ___
 
 <a name="access"></a>
-## Application Accessibility (Unit 29)
+## Application Accessibility
 
 **Web Accessibility Initiative - Accessibile Rich Internet Applications (WAI-ARIA). Is a technical standard that defines ways to make web content and applications more accessible to people with disabilities**.
 
@@ -483,7 +483,7 @@ The **Accessibility Inspector** tool in Pega can be used to identify and correct
 ___
 
 <a name="localize"></a>
-## Localization (Unit 31)
+## Localization
 
 The five ways to adapt to regions using localization are to accommodate the local language, currency, date format, time zone, and time format.
 
@@ -500,7 +500,7 @@ To ensure you design your application for localization you create **field value*
 ___
 
 <a name="keyed"></a>
-## Keyed Data Pages (Unit 33)
+## Keyed Data Pages
 
 A Keyed Data Page is a page that references another data page. This allwos an application to retrieve data more efficiently by reducing the number of server requests, for example. You can use a keyed data page to load product information to a data page on the first query of the day. When a user submits a request in an online store, the data is returned from the **preloaded** (keyed) data page instead of making a fresh server request.
 
@@ -524,7 +524,7 @@ Data access patterns provide simple ways to manage data in a Pega application. T
 ___
 
 <a name="database"></a>
-## Database Updates (Unit 35)
+## Database Updates
 
 There are three main databases that Pega works with:
 
@@ -537,7 +537,7 @@ There are three main databases that Pega works with:
 ___
 
 <a name="integrate"></a>
-## Data Integration (Unit 37)
+## Data Integration
 
 Pega integrates with external systems using **connectors**. You can parse, convert, and map data in either direction to or from the clipboard with a connector. 
 
@@ -566,7 +566,7 @@ Pega provides services for a wide range of industry-standard protocols and stand
 ___
 
 <a name="simulate"></a>
-## Simulating Integration Data (Unit 39)
+## Simulating Integration Data
 
 Pega provides the ability to simulate integrations with services for testing purposes or when the data source is unavailable. You simulate an integration to unit test the **integration connector**.
 
@@ -800,7 +800,7 @@ The **Job Scheduler** shcedules a recurring task. This can run at a specified in
 ___
 
 <a name="debug"></a>
-## Debugging and Performance (Unit 55)
+## Debugging and Performance
 
 Regular monitoring of log files during development and production helps ensure your application is operating properly. The **PegaRULES Log Analyzer (PLA)** is a standalone web application that developers and system administrators can use to view summaries of console logs.
 
@@ -870,7 +870,7 @@ There are two ways to create a product rule:
 ___
 
 <a name="mobile"></a>
-## Mobile Apps for Pega Applications (Unit 61)
+## Mobile Apps for Pega Applications
 
 There are three prerequesites to deploying a mobile app using Pega:
 
@@ -891,7 +891,7 @@ The three main groups of tasks that are done when configuring an app are known a
 **It is best practice to always use data pages as a data source. When offline, data pages store all completed work. These can be synced to the application server when the mobile device is online**.
 
 <a name="offline"></a>
-### Offline Processing for Mobile Apps (Unit 63)
+### Offline Processing for Mobile Apps
 
 **Offline-enabled mobile apps allow for users to create cases and work on assignments while their devices are offline**.
 

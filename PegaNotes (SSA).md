@@ -35,6 +35,7 @@
 * [Background Processing](#background)
 * [Debugging and Performance](#debug)
 * [Relevant Records](#relevant)
+* [Application Migration](#migrate)
 * [Mobile Apps for Pega Applications](#mobile)
   * [Offline Processing for Mobile Apps](#offline)
 ___
@@ -846,6 +847,25 @@ There are three ways to designate a record as relevant:
 * Adding records from the **Relevant Records** tab the the **Application > Inventory** page.
 
 Marking a relevant record as **inactive** makes it unavailable in **App Studio**.
+
+___
+
+<a name="migrate"></a>
+## Application Migration
+
+Applications are migrated between environments during development. From development, to testing, to production.
+
+A **product rule** identifies the application components to be migrated. It lists the rulesets, data, and other objects that make up an application.
+
+An application is packaged into an **application archive file**, a zip file containing XML documents.
+
+There are two ways to create a product rule:
+
+* Manually - provides more flexibility than the wizard, but potenitally time consuming and error prone.
+
+* Using the **Application Packaging Wizard** - guides you through populating and creating a product rule using the existing rulesets in your applciation.
+
+
 
 ___
 

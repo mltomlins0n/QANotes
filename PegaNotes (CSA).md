@@ -55,7 +55,7 @@ The Pega Platforms capabilities include:
 - Intelligent Virtual Assistant.
 - Java and Activities.
 
-Pega applications can be deployed **on premesis** ar in **the cloud**.
+Pega applications can be deployed **on premesis** or in **the cloud**.
 
 <a name="case"></a>
 ## Case Life Cycle

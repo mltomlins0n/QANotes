@@ -22,7 +22,6 @@
 * [Pega Property Rules](#propertyRules)
 * [Validation Rules](#validation)
 * [Declare Expressions](#declare)
-
 ___
 
 <a name="overview"></a>

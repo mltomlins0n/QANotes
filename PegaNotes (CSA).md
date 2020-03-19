@@ -3,6 +3,7 @@
 ## Contents
 
 * [Pega Overview](#overview)
+  * [Situational Layer Cake](#situational)
 * [Case Life Cycle](#case)
 * [Service Level Agreements](#sla)
 * [Parallel Processing](#parallel)
@@ -34,7 +35,7 @@ Automation is achieved via:
 
 - Dynamically routing work.
 - Orchestrating data exchange to various systems of record.
-- Applying dealines thrughout a business case life cycle.
+- Applying deadlines throughout a business case life cycle.
 
 Pega has template applications that can be extended to save development time and cost. These are tailored towards sales, marketing, customer service, financial services, government, healthcare, and insurance.
 
@@ -55,7 +56,19 @@ The Pega Platforms capabilities include:
 - Intelligent Virtual Assistant.
 - Java and Activities.
 
-Pega applications can be deployed **on premesis** or in **the cloud**.
+Pega applications can be deployed **on premises** or in **the cloud**.
+
+<a name="situational"></a>
+### Situational Layer Cake
+
+Application functions can be reused in in different areas of an application. Pega calls this the **Situational Layer Cake**.
+
+For example, suppose a business operates in the US and the UK, and includes specific tax rules for each region.
+
+The bottom layer contains rules common to the application. The layer above that contains rulesets specific to each region; a US version and a UK version.
+
+**An unlimited number of layers can be added on top of an application, to make rules as intricate as needed**.
+___
 
 <a name="case"></a>
 ## Case Life Cycle
@@ -87,7 +100,7 @@ SLA's have an **urgency**. This is a value is between 0 - 100 and denotes the ur
 
 The urgency generally increases after a case passes each interval.
 
-Cases sometimes have an intial urgency. This is set before the case has even started, and any urgency at the "Start" interval is added to the initial interval. E.g. A case with an initial urgency of 10 and a start urgency of 15 has a total urgency of 25 when the case starts.
+Cases sometimes have an initial urgency. This is set before the case has even started, and any urgency at the "Start" interval is added to the initial interval. E.g. A case with an initial urgency of 10 and a start urgency of 15 has a total urgency of 25 when the case starts.
 
 The "Goal" interval defines the amount of time in which the case or step should be completed.
 ___
@@ -124,7 +137,7 @@ Routing options include:
 
 You route an assignment to the **current user** if they should perform the task, e.g. the employee creating the request enters the expense details.
 
-You route an assignment to the work list of a **specific user** if only that user needs to complete an assignment, e.g. if the manager is the only one to apporve expense reports.
+You route an assignment to the work list of a **specific user** if only that user needs to complete an assignment, e.g. if the manager is the only one to approve expense reports.
 
 You route to a **work queue** for a specific group when anyone in the group can complete the assignment. E.g. anyone in payroll could send payments to employees.
 
@@ -136,7 +149,7 @@ ___
 
 Rules describe the behaviour of individual cases.
 
-Each rule is an instance of a **rule type**. A rule type is an abstract model of a specific case behavior. Pega provides many rule types. For example, Pega provides one type of rule to describe a process flow, and another type of rule to describe an automated email notification.
+Each rule is an instance of a **rule type**. A rule type is an abstract model of a specific case behaviour. Pega provides many rule types. For example, Pega provides one type of rule to describe a process flow, and another type of rule to describe an automated email notification.
 
 Using individual rules makes your application modular, with rules acting much like classes in an OOP application.
 
@@ -144,7 +157,7 @@ This approach provides three significant benefits:
 
 - Versioning, rules can be updated whenever case behaviour needs to change. Pega maintains a history of these changes much like GitHub.
 
-- Delegation, System architects delegate rules to business users to allow business users to update case behavior as business conditions change. The business user updates the delegated rule, while other parts of the application remain unchanged.
+- Delegation, System architects delegate rules to business users to allow business users to update case behaviour as business conditions change. The business user updates the delegated rule, while other parts of the application remain unchanged.
 
 - Reuse, rules should be reused whenever an application needs to incorporate existing case behaviour.  For example, you create a UI form to collect policyholder information for auto insurance claims. You can then reuse this UI form for property insurance claims and marine insurance claims.
 
@@ -157,7 +170,7 @@ An instance of a ruleset is a **ruleset version**. Updating the contents of a ru
 
 You identify each ruleset by its name and version number. For example, an application to process expense reports includes a ruleset named Expense. You refer to the ruleset as Expense:01-02-03, where Expense is the name of the ruleset and 01-02-03 is the version number.
 
-Ruleset numbers start at 01-01-01 and can increease to 99-99-99.
+Ruleset numbers start at 01-01-01 and can increase to 99-99-99.
 
 The version number is divided into three segments: a **major version**, a **minor version**, and a **patch version**.
 
@@ -194,11 +207,11 @@ Classes which contain other classes are **parent** classes. The contained class 
 
 Pega's "Work" class contains child classes for different case types, such as an auto insurance claim. Each child class contains all of the rules unique to that case type.
 
-The class heirarchy determines how system architects can reuse rules in the application, and consists of several groups of classes:
+The class hierarchy determines how system architects can reuse rules in the application, and consists of several groups of classes:
 
 - Classes that describe a specific case type.
 
-- Classes that collect common rules and data elements, such as an pproval process shared across the whole IT department.
+- Classes that collect common rules and data elements, such as an approval process shared across the whole IT department.
 
 - Classes from other applications.
 
@@ -235,7 +248,7 @@ In directed inheritance, the parent class is explicitly specified. You apply dir
 **Directed inheritance is the only option that allows an application class to inherit rules defined for standard Pega classes, such as the Work- or Data- class**.
 
 <a name="reusing"></a>
-### Resusing Rules Through Inheritance
+### Reusing Rules Through Inheritance
 
 When attempting to reuse rules through inheritance, Pega first searches through the parent classes indicated by pattern inheritance. If unsuccessful, Pega then searches the parent class indicated by directed inheritance as the basis for another pattern inheritance search. This process repeats until Pega reaches the last class in the class hierarchy, called the ultimate base class or @baseclass. If the rule cannot be found after searching @baseclass, Pega returns an error.
 ___
@@ -255,7 +268,7 @@ Value mode should be used for properties with no correlation to other properties
 
 - **Value list** - acts as an ordered list of single values.
 
-- **Value gruop** - acts as an unordered list of single values.
+- **Value group** - acts as an unordered list of single values.
 
 **These 3 types are the same for page mode properties**.
 
@@ -268,7 +281,7 @@ Data can be sourced from different places:
 
 - **Externally** - External systems can source data types.
 
-- **None** - Data types can obtain data entered or transformed during runtime and not asscociate these with any system of record.
+- **None** - Data types can obtain data entered or transformed during runtime and not associate these with any system of record.
 
 Data types can reference other data types. For example, a *Customer* data type could have an *address* property that is a field group defined in an *Address* data type.
 

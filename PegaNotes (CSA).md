@@ -2,6 +2,7 @@
 
 ## Contents
 
+* [Pega Overview](overview)
 * [Case Life Cycle](#case)
 * [Service Level Agreements](#sla)
 * [Parallel Processing](#parallel)
@@ -21,6 +22,40 @@
 * [Declare Expressions](#declare)
 
 ___
+
+<a name="overview"></a>
+## Pega Overview
+
+**Pega is a low/no code model driven application development tool, and allows you to automate business processes.**
+
+Pega facilitates collaboration between developers and stakeholders, using a shared visual model to capture requirements.
+
+Automation is achieved via:
+
+- Dynamically routing work.
+- Orchestrating data exchange to various systems of record.
+- Applying dealines thrughout a business case life cycle.
+
+Pega has template applications that can be extended to save development time and cost. These are tailored towards sales, marketing, customer service, financial services, government, healthcare, and insurance.
+
+The Pega Platforms capabilities include:
+
+- Application Development.
+- Case Management.
+- Data Management and Integration.
+- Decision Management.
+- UI.
+- Reporting.
+- Sysadmin.
+- DevOps.
+- Mobility.
+- Security.
+- Robotics Automation.
+- Workforce Intelligence.
+- Intelligent Virtual Assistant.
+- Java and Activities.
+
+Pega applications can be deployed **on premesis** ar in **the cloud**.
 
 <a name="case"></a>
 ## Case Life Cycle
@@ -55,7 +90,6 @@ The urgency generally increases after a case passes each interval.
 Cases sometimes have an intial urgency. This is set before the case has even started, and any urgency at the "Start" interval is added to the initial interval. E.g. A case with an initial urgency of 10 and a start urgency of 15 has a total urgency of 25 when the case starts.
 
 The "Goal" interval defines the amount of time in which the case or step should be completed.
-
 ___
 
 <a name="parallel"></a>
@@ -66,7 +100,6 @@ If processes can be performed in any order, they can be configured as parallel.
 2 or more processes can be parallel.
 
 This allows cases to advance through multiple paths at the same time within a stage.
-
 ___
 
 <a name="routing"></a>
@@ -96,7 +129,6 @@ You route an assignment to the work list of a **specific user** if only that use
 You route to a **work queue** for a specific group when anyone in the group can complete the assignment. E.g. anyone in payroll could send payments to employees.
 
 For more complex routing you can use **business logic** to route assignments. This is based on a **when** condition to route work based on certain conditions. A when rule can have multiple conditions.
-
 ___
 
 <a name="rules"></a>
@@ -143,7 +175,6 @@ Each application consists of a sequence of rulesets, called a **ruleset stack**.
 Each entry in the ruleset stack represents all the versions of the specified ruleset, starting with the listed version and working down to the lowest minor and patch version for the specified major version.
 
 Each version of an application contains a unique ruleset stack. This allows an updated application to reference new ruleset versions that contain updates and new features.
-
 ___
 
 <a name="classes"></a>
@@ -174,7 +205,6 @@ The class heirarchy determines how system architects can reuse rules in the appl
 - Base classes provided by Pega. These classes contains rules that provide basic functionality for processing cases.
 
 Any rule available to an application through the class hierarchy is considered in scope. Rules that an application cannot access through the class hierarchy are considered out of scope.
-
 ___
 
 <a name="inheritance"></a>
@@ -208,7 +238,6 @@ In directed inheritance, the parent class is explicitly specified. You apply dir
 ### Resusing Rules Through Inheritance
 
 When attempting to reuse rules through inheritance, Pega first searches through the parent classes indicated by pattern inheritance. If unsuccessful, Pega then searches the parent class indicated by directed inheritance as the basis for another pattern inheritance search. This process repeats until Pega reaches the last class in the class hierarchy, called the ultimate base class or @baseclass. If the rule cannot be found after searching @baseclass, Pega returns an error.
-
 ___
 
 <a name="data"></a>
@@ -265,7 +294,6 @@ There are 3 scopes for data pages:
 - **Requestor** - Requestor level scope lets you share data pages for a given user session and is often used when the data page contains data associated with the logged in operator.
 
 - **Node** - Node level scope is used to make a data page instance accessible by all users of the application, and other applications running on a given node.
-
 ___
 
 <a name="propertyRules"></a>
@@ -278,7 +306,6 @@ Pega comes with a set of standard property rules. The standard properties have n
 - **py** - you can use these in your application
 
 - **pz** - Supports internal system processing, these values may change with new product releases. You can read but not write to these properties.
-
 ___
 
 <a name="validation"></a>
@@ -297,7 +324,6 @@ For example, you can configure a zip code property to reference an edit validate
 In another example, an email address can reference an edit rule to test whether the entered value contains an "@" symbol. If the submitted value is invalid, the field displays an error. 
 
 Edit validate rules run when the user exits a field if the harness rule is configured to support client-side validation. Otherwise, edit validate rules are run when the user submits a form.
-
 ___
 
 <a name="declare"></a>
@@ -310,6 +336,4 @@ Declare expressions compute a value based on an expression and are automatically
 - Declarative processing rules - allow configuration of app so that it **automatically updates property values** such as total order amount. e.g. when laptops are ordered by a user, the system multiplies the price of one laptop by the quantity to calculate total order amount. The updates only occur when triggered in the application defined using the trigger event. It monitors changes to the value and runs a computation to apply changes when it does. Used when rules need to be executed all the time, when the input data is changed or the result of the rule is used.
 
 - Procedural processing rules - depends upon rules, such as data transforms, activities to instruct the application when to look for a trigger event. **Only changes data when the user submits a form**. To make the changes visible to the users as they enter values, you must configure sections to use the data transform to refresh the fields. Use at well defined intervals or have a control to fire off the expression
-
 ___
-

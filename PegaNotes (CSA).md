@@ -5,6 +5,7 @@
 * [Pega Overview](#overview)
   * [Situational Layer Cake](#situational)
   * [Application Studios](#studios)
+  * [Roles](#roles)
 * [Case Life Cycle](#case)
 * [Service Level Agreements](#sla)
 * [Parallel Processing](#parallel)
@@ -82,6 +83,34 @@ Pega includes four application studios:
 - **Admin Studio** - focussed on system operations such as requestors, jobs (agents), queue processors, listeners, logs and APIs. Targeted at sysadmins.
 
 - **Prediction Studio** - focussed on defining AI models and assets. Used for predictive, adaptive, and text analytics, transparency policies, and data exploration. Targets data scientists and decision architects.
+___
+
+<a name="roles"></a>
+### Roles
+
+There are many roles on a Pega Project:
+
+- **Business Architect** - works with subject matter experts and stakeholders to determine the business needs. Would define business rules, service level agreements, and processes in a Pega application.
+
+- **Practice Leader** - provides thought leadership, oversees project direction and delivery, and establishes best practices and governance.
+
+- **Product Owner** - owns the project backlog and prioritization of backlog items. Creates acceptance criteria.
+
+- **Project Manager** - provides overall project plan and delivery guidance.
+
+- **Quality Assurance** - creates and executes functional and performance tests, part of the scrum team.
+
+- **Scrum Master** - promotes and supports Scrum practices, facilitates Scrum events as needed.
+
+- **Speciality Architects** - general term for an architect engaged in a certain part of a project, whether it is a UI architect brought in to develop UI, or a decisioning architect working on propositions.
+
+- **System Administrator** - provides expertise as needed, in infrastructure, security, or integration.
+
+- **System Architect** - Devs who design and configure the application. Lead architects (LSA) design the overall structure while senior (SSA) and system architects (SA) configure assets such as UI forms and case life cycles.
+
+**Citizen Developers** can also collaborate on a Pega project. These are non-technical business users who bring knowledge about business needs.
+
+Role titles can change depending on the organization implementing the project. "System Architect" may become "Application Developer" or "Software Engineer".
 ___
 
 <a name="case"></a>

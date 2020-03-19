@@ -4,6 +4,7 @@
 
 * [Pega Overview](#overview)
   * [Situational Layer Cake](#situational)
+  * [Application Studios](#studios)
 * [Case Life Cycle](#case)
 * [Service Level Agreements](#sla)
 * [Parallel Processing](#parallel)
@@ -68,6 +69,20 @@ For example, suppose a business operates in the US and the UK, and includes spec
 The bottom layer contains rules common to the application. The layer above that contains rulesets specific to each region; a US version and a UK version.
 
 **An unlimited number of layers can be added on top of an application, to make rules as intricate as needed**.
+___
+
+<a name="studios"></a>
+### Application Studios
+
+Pega includes four application studios:
+
+- **App Studio** - focussed on application development, including case design, data and integrations, channels and interfaces, and UI. Targets business analysts, application devs, front end (UI/UX) devs, data engineers.
+
+- **Dev Studio** - focussed on advanced functionality such as system settings, complex rules, security, component reuse across studios, collaborative branched development, and versioning and source control. Targeted at experienced devs, account admins and security admins.
+
+- **Admin Studio** - focussed on system operations such as requestors, jobs (agents), queue processors, listeners, logs and APIs. Targeted at sysadmins.
+
+- **Prediction Studio** - focussed on defining AI models and assets. Used for predictive, adaptive, and text analytics, transparency policies, and data exploration. Targets data scientists and decision architects.
 ___
 
 <a name="case"></a>

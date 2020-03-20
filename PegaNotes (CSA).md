@@ -186,7 +186,7 @@ You route to a **work queue** for a specific group when anyone in the group can 
 
 For more complex routing you can use **business logic** to route assignments. This is based on a **when** condition to route work based on certain conditions. A when rule can have multiple conditions.
 
-Pega provides many other out of the box (OOTB) routing options, such as routing to a **skilled group** using *ToSkilledGroup*.
+Pega provides many other out of the box (OOTB) routing options, such as routing to a **skilled group** using *ToSkilledGroup*. An example of routing to a skilled group could be routing work to a customer service rep (CSR) who speaks Japanese.
 ___
 
 <a name="rules"></a>

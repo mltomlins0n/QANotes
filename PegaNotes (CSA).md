@@ -13,6 +13,7 @@
 * [Rules](#rules)
   * [Rulesets](#rulesets)
   * [Ruleset Stack](#rulesetStack)
+  * [Updating Rules](#update)
 * [Classes](#classes)
 * [Inheritance](#inheritance)
   * [Pattern Inheritance](#pattern)
@@ -233,6 +234,29 @@ Each application consists of a sequence of rulesets, called a **ruleset stack**.
 Each entry in the ruleset stack represents all the versions of the specified ruleset, starting with the listed version and working down to the lowest minor and patch version for the specified major version.
 
 Each version of an application contains a unique ruleset stack. This allows an updated application to reference new ruleset versions that contain updates and new features.
+
+<a name="update"></a>
+### Updating Rules
+
+System architects often secure rulesets to prevent unauthorized or unintended changes to rules. When you edit the rules in a secured ruleset, you either **check out** the rule or perform a **private edit**.
+
+The **check-out** feature is used to manage changes to rules when multiple developers work on an application. This feature allows a system architect to update a rule while preventing updates by other system architects. Rule check-out creates a copy of a rule in a ruleset that is only visible to you, called a **personal ruleset**. After you update the rule and test the changes, you **check in** the rule. This updates the application ruleset with a new version of the rule.
+
+**Checking out a rule prevents other developers from checking out the same rule until you check in your changes**.
+
+The personal ruleset occupies the top spot in the ruleset stack. The rules in your personal ruleset override rules in the rest of the application. This allows you to test your changes to the rule without affecting other system architects.
+
+When you finish editing the rule, click **Save** to save your changes to the checked out rule. This commits the updated rule to your personal ruleset. After you save the rule, you can test your changes.
+
+After you test the rule and confirm that your configuration works as expected, click **Check in** to replace the original rule with the version in your personal ruleset. Unless approval is required, your changes immediately affect application behaviour.
+
+You are not required to check in your changes immediately. You can log off and return to a checked out rule later or click **Discard** to remove the rule from your personal ruleset.
+
+Select **Checkouts > Bulk** actions to check in several records at the same time.
+
+A **private edit** provides a non-exclusive check out of a rule. This allows other system architects to edit a rule at the same time. Private edits are useful for quick debugging without interrupting development by other team members. This option is only available in Dev studio.
+
+It is a best practice to lock older versions of a ruleset in order to prevent changes. For rules in a locked ruleset, a lock icon is displayed on the rule form. To update a rule in a locked ruleset version, save the rule to an unlocked ruleset version, then check out the rule if necessary.
 ___
 
 <a name="classes"></a>

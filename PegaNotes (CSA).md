@@ -185,6 +185,8 @@ You route an assignment to the work list of a **specific user** if only that use
 You route to a **work queue** for a specific group when anyone in the group can complete the assignment. E.g. anyone in payroll could send payments to employees.
 
 For more complex routing you can use **business logic** to route assignments. This is based on a **when** condition to route work based on certain conditions. A when rule can have multiple conditions.
+
+Pega provides many other out of the box (OOTB) routing options, such as routing to a **skilled group** using *ToSkilledGroup*.
 ___
 
 <a name="rules"></a>

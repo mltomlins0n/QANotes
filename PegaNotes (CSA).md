@@ -248,6 +248,8 @@ Each application consists of 3 types of class.
 
 - **Data class**, contains the rules that describe the data objects used in the application, such as a customer or collection of order items.
 
+When you create a rule in App Studio, App Studio identifies the appropriate class for you. You can focus on what you want the rule to do, rather than on how to create the rule. If you need control over the class, you can use Dev Studio to create the rule. The main reason for switching to Dev Studio is to create a rule that you plan to reuse in a different application.
+
 Classes which contain other classes are **parent** classes. The contained class is the **child** class. A child class can inherit rules from its parent class, to reuse them.
 
 Pega's "Work" class contains child classes for different case types, such as an auto insurance claim. Each child class contains all of the rules unique to that case type.

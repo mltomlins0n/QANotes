@@ -364,6 +364,17 @@ The general rules for data type usage are:
 
 - If no suitable data type exists, create a new one.
 
+<a name="property"></a>
+### Referencing Data Properties
+
+- To reference a single value property, type its name prefaced with a ".". e.g. to reference *OrderDate*, type .OrderDate.
+
+- To reference an entry in a value group, type the value's name prefaced with a ".", followed by the property you want to reference in brackets. e.g. to reference a *mobile* number property inside a *Phone* value group, type .Phone(Mobile).
+
+- To reference a value property in a value list, type the value list prefaced with a ".", followed by the list index of the property you want to reference. Unlike arrays, list indexes start at 1. e.g. to reference the first property in a list of discount codes, type .DiscountCode(1).
+
+Referencing page properties is the same, except that when referencing specific properties, you can add the name of the page to the start of the reference. This establishes the context of the property. The context of a page acts as a container for the property. If you want to reference the city in the work address group, type .Address(Work).City.
+
 <a name="dataPages"></a>
 ### Data Pages
 

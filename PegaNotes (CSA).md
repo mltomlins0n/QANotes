@@ -337,9 +337,9 @@ Value mode should be used for properties with no correlation to other properties
 
 - **Single value** - stores a single piece of data.
 
-- **Value list** - acts as an ordered list of single values.
+- **Value list** - acts as an **ordered** list of single values.
 
-- **Value group** - acts as an unordered list of single values.
+- **Value group** - acts as an **unordered** list of single values.
 
 **These 3 types are the same for page mode properties**.
 

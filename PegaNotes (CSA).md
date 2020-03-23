@@ -24,6 +24,8 @@
 * [Pega Property Rules](#propertyRules)
 * [Validation Rules](#validation)
 * [Declare Expressions](#declare)
+  * [Declarative Processing](#declarative)
+  * [Procedural Processing](#procedural)
 ___
 
 <a name="overview"></a>
@@ -428,7 +430,13 @@ Declare expressions compute a value based on an expression and are automatically
 
 - Declarative network - internal data structure that defines the relationship between properties whose value is automatically calculated based on changes to other property values. A declare expression in a network can use the target property of another declare expression as its source property.
 
-- Declarative processing rules - allow configuration of app so that it **automatically updates property values** such as total order amount. e.g. when laptops are ordered by a user, the system multiplies the price of one laptop by the quantity to calculate total order amount. The updates only occur when triggered in the application defined using the trigger event. It monitors changes to the value and runs a computation to apply changes when it does. Used when rules need to be executed all the time, when the input data is changed or the result of the rule is used.
+<a name="declarative"></a>
+### Declarative Processing
 
-- Procedural processing rules - depends upon rules, such as data transforms, activities to instruct the application when to look for a trigger event. **Only changes data when the user submits a form**. To make the changes visible to the users as they enter values, you must configure sections to use the data transform to refresh the fields. Use at well defined intervals or have a control to fire off the expression
+Declarative processing rules allow configuration of app so that it **automatically updates property values** such as total order amount. e.g. when laptops are ordered by a user, the system multiplies the price of one laptop by the quantity to calculate total order amount. The updates only occur when triggered in the application defined using the trigger event. It monitors changes to the value and runs a computation to apply changes when it does. Used when rules need to be executed all the time, when the input data is changed or the result of the rule is used.
+
+<a name="procedural"></a>
+### Procedural Processing
+
+Procedural processing depends upon rules, such as data transforms, activities to instruct the application when to look for a trigger event. **Only changes data when the user submits a form**. To make the changes visible to the users as they enter values, you must configure sections to use the data transform to refresh the fields. Use at well defined intervals or have a control to fire off the expression
 ___

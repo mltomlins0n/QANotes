@@ -428,7 +428,11 @@ ___
 
 Declare expressions compute a value based on an expression and are automatically triggered based on backward or forward chaining. They consist of a **target** property, **source** properties and an **expression**.
 
-- Declarative network - internal data structure that defines the relationship between properties whose value is automatically calculated based on changes to other property values. A declare expression in a network can use the target property of another declare expression as its source property.
+- **Declarative network** - internal data structure that defines the relationship between properties whose value is automatically calculated based on changes to other property values. A declare expression in a network can use the target property of another declare expression as its source property.
+
+- **Forward Chaining** - updates the target property value **when** a source property value changes. By default, declare expressions use this, and declarative networks are often configured to use forward chaining.
+
+- **Backwards Chaining** - does not update the target property value automatically, only updates when the application references the property by name. Forms, decision tables, and data transforms can reference the property. WHen referenced, the expression goes back to the source property to update the target.
 
 <a name="declarative"></a>
 ### Declarative Processing

@@ -438,5 +438,5 @@ Declarative processing rules allow configuration of app so that it **automatical
 <a name="procedural"></a>
 ### Procedural Processing
 
-Procedural processing depends upon rules, such as data transforms, activities to instruct the application when to look for a trigger event. **Only changes data when the user submits a form**. To make the changes visible to the users as they enter values, you must configure sections to use the data transform to refresh the fields. Use at well defined intervals or have a control to fire off the expression
+Procedural processing depends upon rules, such as data transforms, activities to instruct the application when to look for a trigger event. **Only changes data when the user submits a form**. To make the changes visible to the users as they enter values, you must configure sections to use the data transform to refresh the fields. Use at well defined intervals or have a control to fire off the expression.
 ___

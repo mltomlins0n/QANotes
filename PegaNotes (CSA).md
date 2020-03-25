@@ -23,6 +23,8 @@
   * [Data Pages](#dataPages)
 * [Pega Property Rules](#propertyRules)
 * [Data Validation](#validate)
+  * [Properties](#valproperties)
+  * [Controls](#controls)
   * [Validation Rules](#valrules)
     * [Validate Rules](#validaterules)
     * [Edit Validate Rules](#editvalrules)

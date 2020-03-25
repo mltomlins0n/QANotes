@@ -22,7 +22,10 @@
   * [Data Types](#dataTypes)
   * [Data Pages](#dataPages)
 * [Pega Property Rules](#propertyRules)
-* [Validation Rules](#validation)
+* [Data Validation](#validate)
+  * [Validation Rules](#valrules)
+    * [Validate Rules](#validaterules)
+    * [Edit Validate Rules](#editvalrules)
 * [Declare Expressions](#declare)
   * [Declarative Processing](#declarative)
   * [Procedural Processing](#procedural)
@@ -406,13 +409,40 @@ Pega comes with a set of standard property rules. The standard properties have n
 ___
 
 <a name="validation"></a>
-## Validation Rules
+## Data Validation
+
+Pega provides **property types**, **controls**, and **rules** that support most validation requirements.
+
+**By default, Pega performs client side validation**.
+
+<a name="valproperties"></a>
+### Properties
+
+Single value properties have types such as date, integer, decimal, text, or true/false. Selecting the appropriate type ensures that users enter a valid value. For example, a quantity field would be set up with an integer type so that a user only enters a whole number, and not text.
+
+<a name="controls"></a>
+### Controls
+
+Controls restrict users from entering or selecting invalid values on a form. For example, when a form requires a date, using a calendar control ensures that a user enters a date value.
+
+Controls can also be configured to only allow valid values to be selected. For example, a dropdown list or radio buttons.
+
+You can also add *required* fields, forcing a user into entering a value before they can continue.
+
+<a name="valrules"></a>
+### Validation Rules
 
 You use validation rules when you cannot predict or control the value a user enters in a form. There are two types of validation rules: **validate** and **edit validate**.
+
+<a name="validaterules"></a>
+## Validate Rules
 
 You use validate rules to compare a property against a **condition** when the user submits a form. If the user enters a value that fails to meet the condition, the form displays an error when the form is submitted. 
 
 For example, assume your view contains a field for date of birth. The property type and control cannot prevent users from entering a date that is in the future. However, you can design a validate rule to display an error if the user submits a date that is in the future.
+
+<a name="editvalrules"></a>
+## Edit Validate Rules
 
 You use edit validate rules with single value, value list, and value group properties to test for **patterns**. 
 

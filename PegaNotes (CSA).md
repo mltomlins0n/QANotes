@@ -464,7 +464,7 @@ Declare expressions compute a value based on an expression and are automatically
 
 - **Forward Chaining** - updates the target property value **when** a source property value changes. By default, declare expressions use this, and declarative networks are often configured to use forward chaining.
 
-- **Backwards Chaining** - does not update the target property value automatically, only updates when the application references the property by name. Forms, decision tables, and data transforms can reference the property. WHen referenced, the expression goes back to the source property to update the target.
+- **Backwards Chaining** - does not update the target property value automatically, only updates when the application references the property by name. Forms, decision tables, and data transforms can reference the property. When referenced, the expression goes back to the source property to update the target.
 
 <a name="declarative"></a>
 ### Declarative Processing

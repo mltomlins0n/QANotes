@@ -221,7 +221,7 @@ To package rules for distribution as part of an application, you collect rules i
 
 An instance of a ruleset is a **ruleset version**. Updating the contents of a ruleset creates a new version of that ruleset. 
 
-You identify each ruleset by its name and version number. For example, an application to process expense reports includes a ruleset named Expense. You refer to the ruleset as Expense:01-02-03, where Expense is the name of the ruleset and 01-02-03 is the version number.
+You identify each ruleset by its name and version number. For example, an application to process expense reports includes a ruleset named Expense. You refer to the ruleset as Expense: 01-02-03, where Expense is the name of the ruleset and 01-02-03 is the version number.
 
 Ruleset numbers start at 01-01-01 and can increase to 99-99-99.
 
